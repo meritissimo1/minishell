@@ -6,7 +6,7 @@
 #    By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 09:12:07 by marcrodr          #+#    #+#              #
-#    Updated: 2022/09/12 10:27:16 by marcrodr         ###   ########.fr        #
+#    Updated: 2022/09/12 12:11:09 by marcrodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,8 +34,13 @@ MAIN_SRC	= main.c
 ERROR_DIR	= error
 ERROR_SRC	= check_args.c
 
+## Signal
+SIGNAL_DIR	= signals
+SIGNAL_SRC	= signal.c
+
 SRCS		=	$(MAIN_SRC) \
-				$(addprefix $(ERROR_DIR)/, $(ERROR_SRC)) 
+				$(addprefix $(ERROR_DIR)/, $(ERROR_SRC)) \
+				$(addprefix $(SIGNAL_DIR)/, $(SIGNAL_SRC))
 
 SRCS_PATH	= $(addprefix $(SRCS_DIR)/, $(SRCS)) ## src/*
 
@@ -52,7 +57,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@make -C $(LIBFT_DIR)
-	$(CC) $(CFLAGS) $(INC_FLAGS) $(OBJS) libft/libft.a -o $@
+	$(CC) $(CFLAGS) $(INC_FLAGS) $(OBJS) libft/libft.a -lreadline -o $@
 
 clean:
 	$(RM) $(OBJS_DIR)
@@ -63,9 +68,4 @@ fclean: clean
 	
 re: fclean all
 
-.PHONY: re fclean clean all 
-	
-
-
-
-
+.PHONY: re fclean clean all

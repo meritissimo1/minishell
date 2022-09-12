@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   signal.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/09/12 12:14:07 by marcrodr         ###   ########.fr       */
+/*   Created: 2022/09/12 10:39:03 by marcrodr          #+#    #+#             */
+/*   Updated: 2022/09/12 11:44:58 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H 
+#include "minishell.h"
 
-# include "libft.h"
-# include <signal.h>
-# include <readline/readline.h>
-# include <readline/history.h>
-
-typedef struct s_node
+static void handler(int signal)
 {
-	struct s_node	*next;
-	char			*path;
-}t_node;
+	(void)signal;
+	//g_exit_status = 130;
+	ft_putstr_fd("\n", 1);
+	rl_replace_line("", 0);
+	rl_on_new_line();
+	rl_redisplay();
+}
 
-typedef struct s_path
+void	define_signals(void)
 {
-	t_node	*env;
-}t_path;
-
-// FUNCTIONS
-int 	check_args(int argc);
-void	define_signals(void);
-
-
-
-#endif
+	signal(SIGINT, handler);
+	signal(SIGTSTP, SIG_IGN);
+	signal(SIGQUIT, SIG_IGN);	
+}
