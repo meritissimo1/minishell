@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   felpo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/09/12 19:45:33 by fmoreira         ###   ########.fr       */
+/*   Created: 2022/09/12 13:52:40 by fmoreira          #+#    #+#             */
+/*   Updated: 2022/09/16 02:27:11 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINISHELL_H
-# define MINISHELL_H 
+# define	MINISHELL_H
+#include <stdio.h>
+#include "../libs/libft/libft.h"
 
-# include "libft.h"
-# include "felpo.h"
-
-typedef struct s_node
+typedef	struct	s_nenv
 {
-	struct s_node	*next;
-	char			*path;
-}t_node;
+	char			*var;
+	char			*content;
+	struct s_nenv	*next;
+}	t_nenv;
 
-typedef struct s_path
+typedef struct	s_env
 {
-	t_node	*env;
-}t_path;
+	unsigned long int	size;
+	struct s_nenv	*top_node;
+}	t_env;
 
-int check_args(int argc);
 
 
+void	ft_initialize_list(t_env *env_list);
+t_nenv	*ft_node_format(t_nenv	*node);
+void	ft_more_envp(t_env *env_list, char **env);
 
 #endif
