@@ -6,7 +6,7 @@
 #    By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 09:12:07 by marcrodr          #+#    #+#              #
-#    Updated: 2022/09/12 12:11:09 by marcrodr         ###   ########.fr        #
+#    Updated: 2022/09/19 14:25:46 by marcrodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,9 +38,14 @@ ERROR_SRC	= check_args.c
 SIGNAL_DIR	= signals
 SIGNAL_SRC	= signal.c
 
+## Utils
+UTILS_DIR	= utils
+UTILS_SRC	= utils_env.c
+
 SRCS		=	$(MAIN_SRC) \
 				$(addprefix $(ERROR_DIR)/, $(ERROR_SRC)) \
-				$(addprefix $(SIGNAL_DIR)/, $(SIGNAL_SRC))
+				$(addprefix $(SIGNAL_DIR)/, $(SIGNAL_SRC)) \
+				$(addprefix $(UTILS_DIR)/, $(UTILS_SRC))
 
 SRCS_PATH	= $(addprefix $(SRCS_DIR)/, $(SRCS)) ## src/*
 

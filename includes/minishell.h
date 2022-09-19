@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/09/12 12:14:07 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/09/19 15:08:27 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,30 @@
 # include <signal.h>
 # include <readline/readline.h>
 # include <readline/history.h>
+# include <unistd.h>
+# include <sys/wait.h>
 
-typedef struct s_node
-{
-	struct s_node	*next;
-	char			*path;
-}t_node;
+# define PROMPT "$> "
 
-typedef struct s_path
+typedef	struct	s_nenv
 {
-	t_node	*env;
-}t_path;
+	char			*var;
+	char			*content;
+	struct s_nenv	*next;
+}	t_nenv;
+
+typedef struct	s_env
+{
+	unsigned long int	size;
+	struct s_nenv	*top_node;
+}	t_env;
+
+
+t_nenv	*ft_node_format(t_nenv	*node);
+void	ft_initialize_list(t_env *env_list);
+void	ft_more_envp(t_env *env_list, char **env);
+t_env	initialize_env(char **envp);
+
 
 // FUNCTIONS
 int 	check_args(int argc);
