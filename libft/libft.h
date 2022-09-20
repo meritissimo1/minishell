@@ -6,6 +6,7 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stdarg.h>
+# include <string.h>
 
 # define DECIMAL	"0123456789"
 # define HEXALOWER	"0123456789abcdef"

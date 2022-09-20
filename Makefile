@@ -6,7 +6,7 @@
 #    By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 09:12:07 by marcrodr          #+#    #+#              #
-#    Updated: 2022/09/19 14:25:46 by marcrodr         ###   ########.fr        #
+#    Updated: 2022/09/20 10:55:22 by marcrodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ SIGNAL_SRC	= signal.c
 
 ## Utils
 UTILS_DIR	= utils
-UTILS_SRC	= utils_env.c
+UTILS_SRC	= init_env.c
 
 SRCS		=	$(MAIN_SRC) \
 				$(addprefix $(ERROR_DIR)/, $(ERROR_SRC)) \
@@ -69,8 +69,13 @@ clean:
 
 fclean: clean
 	@make $@ -C $(LIBFT_DIR)
-	$(RM) $(NAME)
+	$(RM) $(NAME) debug
 	
 re: fclean all
+
+debug:
+	@make -C $(LIBFT_DIR)
+	$(CC) -g $(CFLAGS) $(INC_FLAGS) $(SRCS_PATH) libft/libft.a -lreadline -o $@
+	gdb --tui ./$@
 
 .PHONY: re fclean clean all

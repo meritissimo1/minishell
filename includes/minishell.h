@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/09/19 15:08:27 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/09/20 10:02:55 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <signal.h>
 # include <readline/readline.h>
 # include <readline/history.h>
-# include <unistd.h>
 # include <sys/wait.h>
 
 # define PROMPT "$> "

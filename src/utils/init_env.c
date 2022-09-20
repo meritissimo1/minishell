@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_env.c                                        :+:      :+:    :+:   */
+/*   init_env.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 14:18:45 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/09/19 15:09:48 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/09/20 11:05:13 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 t_env	initialize_env(char **envp)
 {
 	t_env	env_list;
-	//t_nenv	aux;
 	char	**env;
 	int		count;
 
@@ -29,7 +28,6 @@ t_env	initialize_env(char **envp)
 	while (envp[count] != NULL)
 	{
 		ft_more_envp(&env_list, ft_split(envp[count++], 61));
-		printf("count: %d\n", count);								//teste de contagem de variaveis de ambiente
 	}
 	printf("OP count: %d\nOP envp: %lu\n", count, env_list.size);	//teste de contagem de variaveis de ambiente
 	return(env_list);
@@ -40,6 +38,7 @@ void	ft_more_envp(t_env *env_list, char **env)
 	t_nenv	*new;
 	unsigned long int	ok;
 
+	new = (t_nenv *)ft_calloc(sizeof(t_nenv), 1);
 	new = ft_node_format(new);
 	new = env_list->top_node;
 	ok = 0;
@@ -53,6 +52,7 @@ void	ft_more_envp(t_env *env_list, char **env)
 	}
 	new->var = env[0];
 	new->content = env[1];
+	printf("var: %s ### content: %s \n", new->var, new->content);
 	env_list->size++;
 }
 
