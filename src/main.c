@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:03:35 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/09/20 11:26:29 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/09/22 10:59:54 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main(int argc, char **argv, char **env)
 			break ; 
 		if (strncmp(command_line, "", 1) != 0)
 			add_history(command_line);
-		if (!strncmp(command_line, "tireme daqui", 1))
+		if (!strncmp(command_line, "faze up", 7)) // remover depois
 			exit(0);
 		
 	}		

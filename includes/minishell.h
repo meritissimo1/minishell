@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/09/20 10:02:55 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/09/22 09:21:52 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <readline/history.h>
 # include <sys/wait.h>
 
-# define PROMPT "$> "
+# define PROMPT "#> "
 
 typedef	struct	s_nenv
 {
