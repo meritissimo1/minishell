@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:03:35 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/09/22 10:59:54 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/09/24 02:10:33 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int main(int argc, char **argv, char **env)
 
 	check_args(argc);
 	envp = initialize_env(env);
+	// ft_env(&envp); teste do builtin "env"
+	ft_pwd(&envp);
 	(void)envp;
 	(void)argv;
 	while(42)
@@ -34,7 +36,7 @@ int main(int argc, char **argv, char **env)
 		if (!strncmp(command_line, "faze up", 7)) // remover depois
 			exit(0);
 		
-	}		
+	}
 	return (0);
 }
 

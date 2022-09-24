@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_env.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 14:18:45 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/09/20 11:05:13 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/09/24 01:42:53 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ t_env	initialize_env(char **envp)
 	{
 		ft_more_envp(&env_list, ft_split(envp[count++], 61));
 	}
-	printf("OP count: %d\nOP envp: %lu\n", count, env_list.size);	//teste de contagem de variaveis de ambiente
+	//printf("OP count: %d\nOP envp: %lu\n", count, env_list.size);	//teste de contagem de variaveis de ambiente
 	return(env_list);
 }
 
@@ -52,7 +52,7 @@ void	ft_more_envp(t_env *env_list, char **env)
 	}
 	new->var = env[0];
 	new->content = env[1];
-	printf("var: %s ### content: %s \n", new->var, new->content);
+	//printf("var: %s ### content: %s \n", new->var, new->content);
 	env_list->size++;
 }
 

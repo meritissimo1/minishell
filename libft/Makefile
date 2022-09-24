@@ -42,7 +42,8 @@ FILES         =     ft_atoi.c\
 					ft_ftoa.c\
 					ft_printf.c\
 					ft_tolower.c\
-					ft_toupper.c
+					ft_toupper.c\
+					ft_strcmp.c
 
 OBJS          =     $(FILES:.c=.o)
 FLAGS         =     -Wall -Wextra -Werror
