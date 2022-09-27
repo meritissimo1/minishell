@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/09/24 02:11:09 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/09/27 11:46:44 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,13 @@ void	define_signals(void);
 // BUILT-INS
 void	ft_env(t_env *env_list);
 void	ft_pwd(t_env *env_list);
+
+// UTILS
+int	is_quote_apostrofhe(char c);
+int	is_operator(char c);
+
+// PARSER
+int	parser_count(char *cmd_line);
+
 
 #endif

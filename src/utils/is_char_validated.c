@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pwd.c                                           :+:      :+:    :+:   */
+/*   is_char_validated.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/24 02:01:31 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/09/27 11:39:31 by marcrodr         ###   ########.fr       */
+/*   Created: 2022/09/27 10:37:22 by marcrodr          #+#    #+#             */
+/*   Updated: 2022/09/27 11:38:43 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void	ft_pwd(t_env *env_list)
+int	is_quote_apostrofhe(char c)
 {
-	t_nenv	*aux;
-//	int		count; // set but not used
+	if (c == '\"' || c == '\'')
+		return (1);
+	return (0);
+}
 
-		aux = (t_nenv *)ft_calloc(sizeof(t_nenv), 1);
-	aux = ft_node_format(aux);
-	aux = env_list->top_node;
-//	count = 0;
-
-	while (ft_strcmp(aux->var, "PWD"))
-	{
-		aux = aux->next;
-	}
-
-	if (!ft_strcmp(aux->var, "PWD"))
-	{
-		printf("%s\n", aux->content);
-	}
-	else
-		printf("PWD doesn't exist\n");
+int	is_operator(char c)
+{
+	if (c == '>' || c == '<' ||
+		c == '&' || c == '|' )
+		return (1);
+	return (0);
 }

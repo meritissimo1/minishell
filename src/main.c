@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:03:35 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/09/24 02:10:33 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/09/27 11:47:35 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ int main(int argc, char **argv, char **env)
 			break ; 
 		if (strncmp(command_line, "", 1) != 0)
 			add_history(command_line);
-		if (!strncmp(command_line, "faze up", 7)) // remover depois
+		if (!strncmp(command_line, "faze", 7)) // remover depois
 			exit(0);
-		
+		parser_count(command_line);
 	}
 	return (0);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 09:12:07 by marcrodr          #+#    #+#              #
-#    Updated: 2022/09/24 02:11:38 by fmoreira         ###   ########.fr        #
+#    Updated: 2022/09/27 11:38:18 by marcrodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,17 +40,22 @@ SIGNAL_SRC	= signal.c
 
 ## Utils
 UTILS_DIR	= utils
-UTILS_SRC	= init_env.c
+UTILS_SRC	= init_env.c is_char_validated.c
 
 ## Built-ins
 BUILT_DIR	= builtins
 BUILT_SRC	= ft_env.c ft_pwd.c
 
+## Parser
+PARSER_DIR	= parser
+PARSER_SRC	= parser_count.c
+
 SRCS		=	$(MAIN_SRC) \
 				$(addprefix $(ERROR_DIR)/, $(ERROR_SRC)) \
 				$(addprefix $(SIGNAL_DIR)/, $(SIGNAL_SRC)) \
 				$(addprefix $(UTILS_DIR)/, $(UTILS_SRC)) \
-				$(addprefix $(BUILT_DIR)/, $(BUILT_SRC))
+				$(addprefix $(BUILT_DIR)/, $(BUILT_SRC)) \
+				$(addprefix $(PARSER_DIR)/, $(PARSER_SRC) )
 				
 SRCS_PATH	= $(addprefix $(SRCS_DIR)/, $(SRCS)) ## src/*
 
