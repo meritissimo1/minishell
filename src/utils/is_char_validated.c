@@ -6,13 +6,13 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 10:37:22 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/09/27 11:38:43 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/09/29 10:37:15 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	is_quote_apostrofhe(char c)
+int	is_quote_apostro(char c)
 {
 	if (c == '\"' || c == '\'')
 		return (1);
