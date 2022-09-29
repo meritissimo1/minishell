@@ -6,7 +6,7 @@
 #    By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 09:12:07 by marcrodr          #+#    #+#              #
-#    Updated: 2022/09/27 11:38:18 by marcrodr         ###   ########.fr        #
+#    Updated: 2022/09/29 11:43:55 by marcrodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ SIGNAL_SRC	= signal.c
 
 ## Utils
 UTILS_DIR	= utils
-UTILS_SRC	= init_env.c is_char_validated.c
+UTILS_SRC	= init_env.c is_char_validated.c utils.c
 
 ## Built-ins
 BUILT_DIR	= builtins
@@ -48,7 +48,7 @@ BUILT_SRC	= ft_env.c ft_pwd.c
 
 ## Parser
 PARSER_DIR	= parser
-PARSER_SRC	= parser_count.c
+PARSER_SRC	= parser_count.c parser_split.c
 
 SRCS		=	$(MAIN_SRC) \
 				$(addprefix $(ERROR_DIR)/, $(ERROR_SRC)) \

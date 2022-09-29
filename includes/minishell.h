@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/09/29 10:32:17 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/09/29 11:51:19 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,10 @@ void	ft_pwd(t_env *env_list);
 // UTILS
 int	is_quote_apostro(char c);
 int	is_operator(char c);
+char	*ft_skip_space(char *str);
 
 // PARSER
+char	**parser_split(char *command_line);
 int	parser_count(char *cmd_line);
 
 
