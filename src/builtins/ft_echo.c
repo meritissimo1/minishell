@@ -1,40 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_echo.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 11:38:25 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/10/03 20:28:45 by fmoreira         ###   ########.fr       */
+/*   Created: 2022/10/03 19:07:02 by fmoreira          #+#    #+#             */
+/*   Updated: 2022/10/03 20:30:14 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-char	*ft_skip_space(char *str)
+void	ft_echo(char *cmd_line)
 {
-	char	*ret;
+	char	**splited;
 
-	while (ft_isspace(*str))
-		str++;
-	ret = str;
-	return (ret);
-}
-
-void	ft_print_ppc(char  **splited, int aux)
-{
-	int	i;
-
-	i = 0;
-	while (splited[i])
-	{
-		printf("%s", splited[i++]);
-		if (aux == 0)
-			printf(" ");
-		if (aux == 1 && ft_strcmp(splited[i], "\n"))
-			break;
-	}
-	if (aux == 0)
-		printf("\n");
+	splited = ft_split(cmd_line, 32);
+	ft_print_ppc(splited, 0);  // printa o comando ***precisa ser reavalidade de sua utilidade***
+	if (ft_strcmp(splited[2], "-n"))
+		ft_print_ppc(splited + 2, 0);
+	else
+		ft_print_ppc(splited, 1);
 }

@@ -48,11 +48,13 @@ void	define_signals(void);
 // BUILT-INS
 void	ft_env(t_env *env_list);
 void	ft_pwd(t_env *env_list);
+void	ft_echo(char *cmd_line);
 
 // UTILS
 int	is_quote_apostro(char c);
 int	is_operator(char c);
 char	*ft_skip_space(char *str);
+void	ft_print_ppc(char  **splited, int aux);
 
 // PARSER
 char	**parser_split(char *command_line);
