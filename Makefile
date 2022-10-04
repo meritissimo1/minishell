@@ -6,7 +6,7 @@
 #    By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 09:12:07 by marcrodr          #+#    #+#              #
-#    Updated: 2022/09/29 11:43:55 by marcrodr         ###   ########.fr        #
+#    Updated: 2022/10/04 09:39:55 by marcrodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ BUILT_SRC	= ft_env.c ft_pwd.c  ft_echo.c
 
 ## Parser
 PARSER_DIR	= parser
-PARSER_SRC	= parser_count.c parser_split.c
+PARSER_SRC	= parser_count.c parser_split.c parser_size.c
 
 SRCS		=	$(MAIN_SRC) \
 				$(addprefix $(ERROR_DIR)/, $(ERROR_SRC)) \

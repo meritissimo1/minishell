@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 10:19:20 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/09/29 12:35:38 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/10/04 09:39:38 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	**parser_split(char *command_line)
 	char	**parser;
 	int		qtd;
 	int		i;
-//	int		cmd_len;
+	int		cmd_len;
 
 	parser = NULL;
 	qtd = parser_count(command_line);
@@ -30,9 +30,10 @@ char	**parser_split(char *command_line)
 	while (i < qtd)
 	{
 		command_line = ft_skip_space(command_line);
-		printf("Comando parseado: %c\n", command_line[i]);
+		cmd_len = parser_size(command_line);
 		i++;
 	}
+	printf("Token size: %d\n", cmd_len);
 	
 	
 	return (parser);	

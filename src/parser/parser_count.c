@@ -6,14 +6,11 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 10:29:10 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/09/29 11:05:42 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/10/04 09:46:45 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
-
-static int	chech_operator(char *cmd_line, int i);
-static int	check_quote(char *cmd_line, int *quote, int *apostro, int *assign);
 
 int	parser_count(char *cmd_line)
 {
@@ -44,7 +41,7 @@ int	parser_count(char *cmd_line)
 	return (count);
 }
 
-static int	chech_operator(char *cmd_line, int i)
+int	chech_operator(char *cmd_line, int i)
 {
 	if ((is_operator(cmd_line[i]) && !is_operator(cmd_line[i - 1]))
 		|| (!is_operator(cmd_line[i]) && is_operator(cmd_line[i - 1])))
@@ -52,7 +49,7 @@ static int	chech_operator(char *cmd_line, int i)
 	return (0);
 }
 
-static int	check_quote(char *cmd_line, int *quote, int *apostro, int *assign)
+int	check_quote(char *cmd_line, int *quote, int *apostro, int *assign)
 {
 	if (cmd_line[0] == '=' || ((*assign) && ft_isspace(cmd_line[0])))
 		(*assign) = !(*assign);
