@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:03:35 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/09/29 11:50:51 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/10/03 20:25:39 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ int main(int argc, char **argv, char **env)
 
 	check_args(argc);
 	envp = initialize_env(env);
-	// ft_env(&envp); teste do builtin "env"
-	ft_pwd(&envp);
+	//ft_env(&envp);//	teste do builtin "env"
+	ft_echo("echo -n aopa meu brasil");
+	//ft_pwd(&envp);//	teste do builtin "pwd"
 	(void)envp;
 	(void)argv;
 	while(42)

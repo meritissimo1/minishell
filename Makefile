@@ -44,7 +44,7 @@ UTILS_SRC	= init_env.c is_char_validated.c utils.c
 
 ## Built-ins
 BUILT_DIR	= builtins
-BUILT_SRC	= ft_env.c ft_pwd.c
+BUILT_SRC	= ft_env.c ft_pwd.c  ft_echo.c
 
 ## Parser
 PARSER_DIR	= parser
