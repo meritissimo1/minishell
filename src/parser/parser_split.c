@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 10:19:20 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/10/04 09:39:38 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/10/05 11:45:07 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,17 @@ char	**parser_split(char *command_line)
 	if (!parser)
 		return (NULL);
 	i = 0;
+	printf("você digitou %d comandos\n", qtd);
 	while (i < qtd)
 	{
 		command_line = ft_skip_space(command_line);
 		cmd_len = parser_size(command_line);
+		//parser = ft_substr(command_line, 0, cmd_len);
+		command_line += cmd_len;
 		i++;
+		printf("Tamanho do %d° comando: %d\n",i, cmd_len);		
 	}
-	printf("Token size: %d\n", cmd_len);
+	
 	
 	
 	return (parser);	
