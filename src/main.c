@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:03:35 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/10/03 20:25:39 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/10/13 11:22:19 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ char	*get_input_line(char *prompt);
 
 int main(int argc, char **argv, char **env)
 {
-	t_env	envp;
-	char	*command_line;
+	char		*command_line;
+	t_env		envp;
 
 	check_args(argc);
 	envp = initialize_env(env);
@@ -36,7 +36,7 @@ int main(int argc, char **argv, char **env)
 			add_history(command_line);
 		if (!strncmp(command_line, "faze", 7)) // remover depois
 			exit(0);
-		parser_split(command_line);
+		get_cmdtable(command_line, envp);
 	}
 	return (0);
 }

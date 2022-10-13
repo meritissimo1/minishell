@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/10/04 09:46:20 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/10/13 11:20:09 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@
 # include <readline/readline.h>
 # include <readline/history.h>
 # include <sys/wait.h>
+
+# define D_QUOTE '\"'
+# define QUOTE '\''
+# define D_QUOTE_S "\""
+# define QUOTE_S "\'"
 
 # define PROMPT "#> "
 
@@ -33,6 +38,7 @@ typedef struct	s_env
 	unsigned long int	size;
 	struct s_nenv	*top_node;
 }	t_env;
+
 
 
 t_nenv	*ft_node_format(t_nenv	*node);
@@ -61,7 +67,9 @@ char	**parser_split(char *command_line);
 int		parser_count(char *cmd_line);
 int		parser_size(char *cmd_line);
 int		chech_operator(char *cmd_line, int i);
-int	check_quote(char *cmd_line, int *quote, int *apostro, int *assign);
+int		check_quote(char *cmd_line, int *quote, int *apostro, int *assign);
+void	get_cmdtable(char *command_line, t_env envp);
+
 
 
 
