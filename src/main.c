@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:03:35 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/10/13 11:22:19 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/10/14 17:07:39 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int main(int argc, char **argv, char **env)
 {
 	char		*command_line;
 	t_env		envp;
+	t_minishell	mini;
 
 	check_args(argc);
 	envp = initialize_env(env);
@@ -36,7 +37,7 @@ int main(int argc, char **argv, char **env)
 			add_history(command_line);
 		if (!strncmp(command_line, "faze", 7)) // remover depois
 			exit(0);
-		get_cmdtable(command_line, envp);
+		split_cmd(&mini, command_line, 0);
 	}
 	return (0);
 }

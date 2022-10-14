@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/10/13 11:20:09 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/10/14 16:52:36 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,21 @@ typedef struct	s_env
 	struct s_nenv	*top_node;
 }	t_env;
 
+typedef struct s_split
+{
+	int	qtt_comand;
+	int	ini;
+	int len;
+	int quote;
+	int	qtt_pipe;	
+}		t_split;
 
+typedef struct s_minishell
+{
+	int		redirect;
+	char	*commands[50];
+	t_split	split;
+}			t_minishell;
 
 t_nenv	*ft_node_format(t_nenv	*node);
 void	ft_initialize_list(t_env *env_list);
@@ -57,18 +71,14 @@ void	ft_pwd(t_env *env_list);
 void	ft_echo(char *cmd_line);
 
 // UTILS
-int		is_quote_apostro(char c);
-int		is_operator(char c);
-char	*ft_skip_space(char *str);
+char	*skip_space(char *str);
+void	init_split(t_minishell *mini);
 void	ft_print_ppc(char  **splited, int aux);
+int		count_pipe(t_minishell *mini, char *cmd, int i);
 
 // PARSER
-char	**parser_split(char *command_line);
-int		parser_count(char *cmd_line);
-int		parser_size(char *cmd_line);
-int		chech_operator(char *cmd_line, int i);
-int		check_quote(char *cmd_line, int *quote, int *apostro, int *assign);
-void	get_cmdtable(char *command_line, t_env envp);
+void	split_cmd(t_minishell *mini, char *cmd, int i);
+
 
 
 
