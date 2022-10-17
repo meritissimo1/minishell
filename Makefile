@@ -6,7 +6,7 @@
 #    By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 09:12:07 by marcrodr          #+#    #+#              #
-#    Updated: 2022/10/17 09:24:31 by marcrodr         ###   ########.fr        #
+#    Updated: 2022/10/17 12:18:46 by marcrodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,18 +44,23 @@ UTILS_SRC	= init_env.c is_char_validated.c utils.c
 
 ## Built-ins
 BUILT_DIR	= builtins
-BUILT_SRC	= ft_env.c ft_pwd.c  ft_echo.c
+BUILT_SRC	= ft_env.c ft_pwd.c  ft_echo.c is_builtin.c
 
 ## Parser
 PARSER_DIR	= parser
 PARSER_SRC	= parser_split.c
+
+## Exec
+EXEC_DIR = exec
+EXEC_SRC = exec_commands.c
 
 SRCS		=	$(MAIN_SRC) \
 				$(addprefix $(ERROR_DIR)/, $(ERROR_SRC)) \
 				$(addprefix $(SIGNAL_DIR)/, $(SIGNAL_SRC)) \
 				$(addprefix $(UTILS_DIR)/, $(UTILS_SRC)) \
 				$(addprefix $(BUILT_DIR)/, $(BUILT_SRC)) \
-				$(addprefix $(PARSER_DIR)/, $(PARSER_SRC) )
+				$(addprefix $(PARSER_DIR)/, $(PARSER_SRC))
+				## $(addprefix $(EXEC_DIR)/, $(EXEC_SRC))
 				
 SRCS_PATH	= $(addprefix $(SRCS_DIR)/, $(SRCS)) ## src/*
 

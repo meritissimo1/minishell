@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/10/17 09:44:24 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/10/17 12:08:21 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "libft.h"
 # include <signal.h>
+# include <stdbool.h>
 # include <readline/readline.h>
 # include <readline/history.h>
 # include <sys/wait.h>
@@ -52,12 +53,37 @@ typedef struct s_split
 	int	qtt_pipe;	
 }		t_split;
 
+typedef struct s_token
+{
+	char	*print;
+	char	*exec;
+	char	quote;
+	char	*end;
+	char	*new;
+	int		i;
+	int		init;
+	int		len;
+	int		posic;	
+}			t_token;
+
+typedef struct s_cmdtable
+{
+	char	*line;
+	char	error_name_file;
+	
+}			t_cmdtable;
+
 typedef struct s_minishell
 {
-	int		redirect;
-	char	*commands[50];
-	t_split	split;
-}			t_minishell;
+	int			c;
+	bool		is_builtin;
+	int			redirect;
+	char		*commands[50];
+	t_split		split;
+	t_cmdtable	*cmdtable;
+}				t_minishell;
+
+int	g_ret_number;
 
 t_nenv	*ft_node_format(t_nenv	*node);
 void	ft_initialize_list(t_env *env_list);

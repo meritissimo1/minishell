@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser_size.c                                      :+:      :+:    :+:   */
+/*   exec_commands.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/04 09:25:25 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/10/17 12:05:14 by marcrodr         ###   ########.fr       */
+/*   Created: 2022/10/17 10:20:37 by marcrodr          #+#    #+#             */
+/*   Updated: 2022/10/17 11:31:23 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void	tokenizer(t_minishell *mini)
+void	exec_commands(t_minishell *mini, char *cmd);
 {
-	t_token	*tk;
+	int	i;
+	int fd[2];
 
-	tk = init_tk();
+	i = 0;
+	mini->redirect = 0;
+	mini->c = 0;
+	while (i < mini->split.qtt_pipe)
+	{
+		// exec pipe
+		exec(mini, cmd);
+		
+	}	
 }
