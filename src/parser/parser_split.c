@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 10:19:20 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/10/14 17:09:25 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/10/17 09:39:35 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	split_cmd(t_minishell *mini, char *cmd, int i)
 	cmd = skip_space(cmd);
 	int a = ft_strlen(cmd);
 	(void)a;
-	while (i < (int)ft_strlen(cmd))
+	while (i < (int)ft_strlen(cmd)) 
 	{
 		if (mini->split.quote == 0 && (cmd[i] == D_QUOTE || cmd[i] == QUOTE))
 			mini->split.quote = cmd[i];
@@ -40,5 +40,6 @@ void	split_cmd(t_minishell *mini, char *cmd, int i)
 		mini->split.qtt_comand++;
 	}
 	free(cmd);
-	mini->commands[mini->split.ini] = NULL;
+	mini->commands[mini->split.qtt_comand] = NULL;
+	printf("the commands: [%s::%s::%s]\n", mini->commands[0], mini->commands[1], mini->commands[2]);
 }

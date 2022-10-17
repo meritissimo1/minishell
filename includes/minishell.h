@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/10/14 16:52:36 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/10/17 09:44:24 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,16 @@
 # include <readline/history.h>
 # include <sys/wait.h>
 
+# define CYAN "\001\033[1;36m\002"
+# define WHITE "\001\033[0m\002"
+# define GREEN "\001\033[1;32m\002"
+
 # define D_QUOTE '\"'
 # define QUOTE '\''
 # define D_QUOTE_S "\""
 # define QUOTE_S "\'"
 
-# define PROMPT "#> "
+# define PROMPT "❍ "
 
 typedef	struct	s_nenv
 {
@@ -78,11 +82,6 @@ int		count_pipe(t_minishell *mini, char *cmd, int i);
 
 // PARSER
 void	split_cmd(t_minishell *mini, char *cmd, int i);
-
-
-
-
-
 
 
 #endif

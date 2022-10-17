@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:03:35 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/10/14 17:07:39 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/10/14 23:56:42 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main(int argc, char **argv, char **env)
 	//ft_pwd(&envp);//	teste do builtin "pwd"
 	(void)envp;
 	(void)argv;
-	while(42)
+	while(42) 
 	{
 		define_signals();
 		command_line = get_input_line(PROMPT);
