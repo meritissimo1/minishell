@@ -12,7 +12,7 @@
 
 #include "minishell.h"
 
-void	exec_commands(t_minishell *mini, char *cmd);
+void	exec_commands(t_minishell *mini)
 {
 	int	i;
 	int fd[2];
@@ -22,8 +22,34 @@ void	exec_commands(t_minishell *mini, char *cmd);
 	mini->c = 0;
 	while (i < mini->split.qtt_pipe)
 	{
-		// exec pipe
-		exec(mini, cmd);
-		
-	}	
+		if (pipe(fd) < 0)
+		{
+			printf("Pipe Error\n");
+			g_ret_number = 127;
+		}
+		mini->out_fd = fd[1];
+		run_commands_aux(mini);		
+		close(mini->out_fd);
+		i++;
+	}
+
 }
+
+void	run_commands_aux(t_minishell *mini)
+{
+	 action(mini);
+}
+
+void	action(t_minishell *mini)
+{
+	mini->line = ft_strdup(mini->commands[mini->c]);
+	if (mini->split.qtt_comand > 1)
+		mini->c++;
+	mini->cmdtable->error_name_file = NULL;
+	while (mini->commands[mini->c] && mini->commands[mini->c][0] != '|')
+	{
+		printf("what is here: %s\n", mini->commands[mini->c]);
+		mini->c++;
+	}
+}
+

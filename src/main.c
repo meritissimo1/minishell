@@ -38,8 +38,8 @@ int main(int argc, char **argv, char **env)
 		if (!strncmp(command_line, "faze", 7)) // remover depois
 			exit(0);
 		split_cmd(&mini, command_line, 0);
-	//	if (mini.split.qtt_comand > 0 && mini.commands[0][0] != '|')
-	//		exec_commands(&mini, command_line);
+		if (mini.split.qtt_comand > 0 && mini.commands[0][0] != '|')
+			exec_commands(&mini);
 	}
 	return (0);
 }
