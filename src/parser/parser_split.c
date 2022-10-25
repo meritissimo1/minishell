@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 10:19:20 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/10/17 09:39:35 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/10/25 09:52:52 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ void	split_cmd(t_minishell *mini, char *cmd, int i)
 				mini->split.quote = 0;
 			else
 				i = count_pipe(mini, cmd, i);
-		}
-		
+		}		
 		mini->split.len++;
 		i++;
 	}

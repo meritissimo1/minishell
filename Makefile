@@ -6,7 +6,7 @@
 #    By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 09:12:07 by marcrodr          #+#    #+#              #
-#    Updated: 2022/10/17 12:18:46 by marcrodr         ###   ########.fr        #
+#    Updated: 2022/10/25 09:56:17 by marcrodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ BUILT_SRC	= ft_env.c ft_pwd.c  ft_echo.c is_builtin.c
 
 ## Parser
 PARSER_DIR	= parser
-PARSER_SRC	= parser_split.c
+PARSER_SRC	= parser_split.c get_cmdtable.c
 
 ## Exec
 EXEC_DIR = exec
