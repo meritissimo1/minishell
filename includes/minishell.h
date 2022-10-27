@@ -31,6 +31,8 @@
 
 # define PROMPT "❍ "
 
+int		g_ret_number;
+
 typedef	struct	s_nenv
 {
 	char			*var;
@@ -69,13 +71,15 @@ typedef struct s_token
 typedef struct s_cmdtable
 {
 	char	*line;
-	char	error_name_file;
+	char	*error_name_file;
 	
 }			t_cmdtable;
 
 typedef struct s_minishell
 {
+	char		*line;
 	int			c;
+	int			out_fd;
 	bool		is_builtin;
 	int			redirect;
 	char		*commands[50];
@@ -89,7 +93,6 @@ t_nenv	*ft_node_format(t_nenv	*node);
 void	ft_initialize_list(t_env *env_list);
 void	ft_more_envp(t_env *env_list, char **env);
 t_env	initialize_env(char **envp);
-
 
 // FUNCTIONS
 int 	check_args(int argc);
@@ -108,6 +111,7 @@ int		count_pipe(t_minishell *mini, char *cmd, int i);
 
 // PARSER
 void	split_cmd(t_minishell *mini, char *cmd, int i);
-
-
+void	exec_commands(t_minishell *mini);
+void	action(t_minishell *mini);
+void	run_commands_aux(t_minishell *mini);
 #endif

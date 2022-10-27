@@ -59,8 +59,8 @@ SRCS		=	$(MAIN_SRC) \
 				$(addprefix $(SIGNAL_DIR)/, $(SIGNAL_SRC)) \
 				$(addprefix $(UTILS_DIR)/, $(UTILS_SRC)) \
 				$(addprefix $(BUILT_DIR)/, $(BUILT_SRC)) \
-				$(addprefix $(PARSER_DIR)/, $(PARSER_SRC))
-				## $(addprefix $(EXEC_DIR)/, $(EXEC_SRC))
+				$(addprefix $(PARSER_DIR)/, $(PARSER_SRC)) \
+				$(addprefix $(EXEC_DIR)/, $(EXEC_SRC))
 				
 SRCS_PATH	= $(addprefix $(SRCS_DIR)/, $(SRCS)) ## src/*
 
