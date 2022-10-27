@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:03:35 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/10/17 12:09:34 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/10/27 09:33:13 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ int main(int argc, char **argv, char **env)
 		if (!strncmp(command_line, "faze", 7)) // remover depois
 			exit(0);
 		split_cmd(&mini, command_line, 0);
-	//	if (mini.split.qtt_comand > 0 && mini.commands[0][0] != '|')
-	//		exec_commands(&mini, command_line);
+		if (mini.split.qtt_comand > 0 && mini.commands[0][0] != '|')
+			exec_commands(&mini, command_line);
 	}
 	return (0);
 }
