@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 10:20:37 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/10/17 11:31:23 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/10/27 10:50:58 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	action(t_minishell *mini)
 	mini->cmdtable->error_name_file = NULL;
 	while (mini->commands[mini->c] && mini->commands[mini->c][0] != '|')
 	{
-		printf("what is here: %s\n", mini->commands[mini->c]);
+		redirect_out(mini, mini->c);
 		mini->c++;
 	}
 }

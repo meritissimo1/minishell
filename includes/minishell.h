@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/10/17 12:08:21 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/10/27 10:51:27 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 # define MINISHELL_H 
 
 # include "libft.h"
+# include <fcntl.h>
 # include <signal.h>
 # include <stdbool.h>
-# include <readline/readline.h>
-# include <readline/history.h>
 # include <sys/wait.h>
+# include <readline/history.h>
+# include <readline/readline.h>
 
 # define CYAN "\001\033[1;36m\002"
 # define WHITE "\001\033[0m\002"
@@ -114,4 +115,8 @@ void	split_cmd(t_minishell *mini, char *cmd, int i);
 void	exec_commands(t_minishell *mini);
 void	action(t_minishell *mini);
 void	run_commands_aux(t_minishell *mini);
+
+// EXEC
+void	redirect_out(t_minishell *mini, int i);
+
 #endif
