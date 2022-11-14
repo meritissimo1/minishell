@@ -118,5 +118,10 @@ void	run_commands_aux(t_minishell *mini);
 
 // EXEC
 void	redirect_out(t_minishell *mini, int i);
+void	redirect_in(t_minishell *mini, int c, char *aux);
+void	simple_redir_out(t_minishell *mini, int i, int flags);
+char	**re_redir(t_minishell *mini, char **file, int c);
+void	read_until(char *file);
+int		find_char(char *str, char wanted);
 
 #endif

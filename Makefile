@@ -52,7 +52,7 @@ PARSER_SRC	= parser_split.c get_cmdtable.c
 
 ## Exec
 EXEC_DIR = exec
-EXEC_SRC = exec_commands.c redirect_out.c
+EXEC_SRC = exec_commands.c redirect_out.c redirect_in.c
 
 SRCS		=	$(MAIN_SRC) \
 				$(addprefix $(ERROR_DIR)/, $(ERROR_SRC)) \

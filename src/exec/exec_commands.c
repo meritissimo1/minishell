@@ -49,6 +49,7 @@ void	action(t_minishell *mini)
 	while (mini->commands[mini->c] && mini->commands[mini->c][0] != '|')
 	{
 		redirect_out(mini, mini->c);
+		redirect_in(mini, mini->c, NULL);
 		mini->c++;
 	}
 }

@@ -27,42 +27,42 @@ void	redirect_out(t_minishell *mini, int i)
 			printf("well well whats here fd:%d\nfile: %s\n", mini->out_fd, file);
 			free(file);
 		}
+		else
+			simple_redir_out(mini, i, flags);
 	}
-	//else
-	//	simple_redir_out(mini, i, flags);
-		
+			
 }
-/*
+
 void	simple_redir_out(t_minishell *mini, int i, int flags)
 {
 	char	*aux;
 	char	*file;
 
 	aux = ft_strtrim(&mini->commands[i][1], " ");
-	file = ft_substr
+	file = ft_substr(aux, 0, find_char(aux, ' '));
+	mini->out_fd = open(file, flags | O_TRUNC, 0777);	
+	free(aux);
+	free(file);
+}
+
+
+int	find_char(char *str, char wanted)
+{
+	int i;
+
+	i = 0;
+	while(str[i])
+	{
+		if (str[i] == wanted)
+			return (i);
+		i++;
+	}
+	return (i);
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*
 void	redirect_out(t_struct *mini, int j)
 {
 	int		flags;
@@ -111,5 +111,4 @@ int	find_char(char *string, char needle)
 	}
 	return (i);
 }
-
 */
