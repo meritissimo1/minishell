@@ -6,7 +6,7 @@
 #    By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 09:12:07 by marcrodr          #+#    #+#              #
-#    Updated: 2022/10/27 10:48:59 by marcrodr         ###   ########.fr        #
+#    Updated: 2022/11/16 13:43:31 by marcrodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ SIGNAL_SRC	= signal.c
 
 ## Utils
 UTILS_DIR	= utils
-UTILS_SRC	= init_env.c is_char_validated.c utils.c
+UTILS_SRC	= init_env.c is_char_validated.c utils.c free_array.c
 
 ## Built-ins
 BUILT_DIR	= builtins

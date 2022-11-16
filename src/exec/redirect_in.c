@@ -4,23 +4,39 @@ void	redirect_in(t_minishell *mini, int c, char *aux)
 {
 	char	**file;
 
-	(void)aux;
 	if (mini->commands[c][0] == '<')
 	{
 		file = NULL;
 		if (mini->commands[c][1] == '<')
-		{
 			file = re_redir(mini, file, c);
+		else
+		{
+			file = ft_split(&mini->commands[c][1], ' ');
+			mini->input_fd = open(file[0], O_RDONLY, 0644);
+			if (mini->input_fd == -1 && mini->error_name_file == NULL)
+				mini->error_name_file = ft_strdup(file[0]);
 		}
+		aux = ft_strtrim(mini->line, " ");
+		if (mini->split.qtt_comand == 1 || (aux[0] == '|'
+				&& ft_strlen(aux) == 1))
+		{
+			free(mini->line);
+			mini->line = new_comman(1, file);
+		}
+		free(aux);
+		mini->redirect = 0;
+		free_array(file);
 	}
 	
 }
 
 char	**re_redir(t_minishell *mini, char **file, int c)
 {
-	(void)c;
 	file = ft_split(&mini->commands[c][2], ' ');
 	read_until(file[0]);
+	mini->input_fd = open(file[0], O_RDONLY | O_CREAT, 0644);
+	mini->name_file = ft_strdup(file[0]);
+	mini->append++;
 	return (file);
 }
 
@@ -43,4 +59,18 @@ void	read_until(char *file)
 	}
 	close(fd);
 	free(line);
+}
+
+char	*new_comman(int i, char **file)
+{
+	char	*aux;
+
+	aux = ft_strdup("");
+	while (file[i] != NULL)
+	{
+		if(ft_strlen(aux) > 0)
+			aux = ft_strjoin(aux, " ");
+		aux = ft_strjoin(aux, file[i]);
+	}
+	return (aux);	
 }
