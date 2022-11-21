@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 12:06:09 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/10/17 12:07:14 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/11/18 17:02:24 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,46 @@
 
 t_token	*init_tk()
 {
-	t_token	*tk;
+	t_token	*token;
 
-	tk = (t_token *)malloc(sizeof(t_token));
-	tk->end = NULL;
-	tk->new = NULL;
-	tk->exec = NULL;
-	tk->print = NULL;
-	tk->quote = '\0';
-	tk->i = 0;
-	tk->init = 0;
+	token = (t_token *)malloc(sizeof(t_token));
+	token->end = NULL;
+	token->new = NULL;
+	token->exec = NULL;
+	token->print = NULL;
+	token->quote = '\0';
+	token->i = 0;
+	token->init = 0;
+	token->len = 1;	
+	token->posic = 0;
+	return (token);	
+}
+
+void	get_home_sign(t_minishell *mini, t_token *tk)
+{
+	char	*extend;
+
+	tk->new = ft_substr(mini->line, tk->init, tk->len - 1);
+	tk->end = ft_strjoin(tk->end, tk->new);
+	free(tk->new);
+	extend = "home"; //mini->home;
+	tk->end = ft_strjoin(tk->end, extend);
+	tk->i++;
 	tk->len = 1;
-	tk->posic = 0;
-	return (tk);	
+	tk->init = tk->i;
+}
+
+void	get_dollar_sign(t_minishell *mini, t_token *tk)
+{
+	char	*extend;
+	char	*n_env;
+
+	tk->new = ft_substr(mini->line, tk->init, tk->len - 1);
+	tk->end = ft_strjoin(tk->end, tk->new);
+	free(tk->new);
+	tk->posic = tokenizer_find_char(&mini->line[tk->i + 1], ' ');
+	n_env = ft_substr(mini->line, tk->i + 1, tk->posic);
+	if (mini->line[tk->i + 1] != '?' && find_env(mini, n_env))
+		extend = ft_strdup(find_env(mini, n_env));
+	printf("%s\n", extend);
 }

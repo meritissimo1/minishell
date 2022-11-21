@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/11/16 15:41:24 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/11/18 16:46:46 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ typedef	struct	s_nenv
 typedef struct	s_env
 {
 	unsigned long int	size;
-	struct s_nenv	*top_node;
+	struct s_nenv		*top_node;
+	int					index;
 }	t_env;
 
 typedef struct s_split
@@ -94,6 +95,8 @@ typedef struct s_minishell
 	char		*error_name_file;
 	int			append;
 	char		*commands[50];
+	t_env		envp;
+	t_token		token;
 	t_split		split;
 	t_cmdtable	*cmdtable;
 }				t_minishell;
@@ -118,14 +121,20 @@ void	ft_echo(char *cmd_line);
 char	*skip_space(char *str);
 void	init_split(t_minishell *mini);
 void	ft_print_ppc(char  **splited, int aux);
+void	get_home_sign(t_minishell *mini, t_token *tk);
+void	get_dollar_sign(t_minishell *mini, t_token *tk);
 int		count_pipe(t_minishell *mini, char *cmd, int i);
 void	free_array(char **array);
+char	*find_env(t_minishell *mini, char *env);
+int	tokenizer_find_char(char *string, char needle);
+t_token	*init_tk();
 
 // PARSER
 void	split_cmd(t_minishell *mini, char *cmd, int i);
-void	exec_commands(t_minishell *mini);
-void	action(t_minishell *mini);
 void	run_commands_aux(t_minishell *mini);
+void	exec_commands(t_minishell *mini);
+void	tokenizer(t_minishell *mini);
+void	action(t_minishell *mini);
 
 // EXEC
 void	redirect_out(t_minishell *mini, int i);

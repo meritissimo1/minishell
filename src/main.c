@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:03:35 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/11/16 13:16:14 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/11/18 17:26:19 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,14 @@ char	*get_input_line(char *prompt);
 
 int main(int argc, char **argv, char **env)
 {
-	char		*command_line;
-	t_env		envp;
 	t_minishell	mini;
+	char		*command_line;
 
 	check_args(argc);
-	envp = initialize_env(env);
+	mini.envp = initialize_env(env);
 	//ft_env(&envp);//	teste do builtin "env"
 	ft_echo("echo -n aopa meu brasil");
 	//ft_pwd(&envp);//	teste do builtin "pwd"
-	(void)envp;
 	(void)argv;
 	while(42) 
 	{

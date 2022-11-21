@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 10:20:37 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/11/16 15:44:55 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/11/18 15:26:24 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	run_commands_aux(t_minishell *mini)
 	 action(mini);
 	 if (mini->commands[0][0] != '>')
 	 {
-		// tokenizer
+		tokenizer(mini);
 	 }
 	 
 }
