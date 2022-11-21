@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/11/18 16:46:46 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/11/21 15:55:00 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,12 +89,14 @@ typedef struct s_minishell
 	int			c;
 	int			out_fd;
 	bool		is_builtin;
+	bool		flag;
 	int			redirect;
 	int			input_fd;
 	char		*name_file;
 	char		*error_name_file;
 	int			append;
 	char		*commands[50];
+	char		**tokens;
 	t_env		envp;
 	t_token		token;
 	t_split		split;
@@ -125,8 +127,11 @@ void	get_home_sign(t_minishell *mini, t_token *tk);
 void	get_dollar_sign(t_minishell *mini, t_token *tk);
 int		count_pipe(t_minishell *mini, char *cmd, int i);
 void	free_array(char **array);
+void	free_tk(t_token *tk);
 char	*find_env(t_minishell *mini, char *env);
-int	tokenizer_find_char(char *string, char needle);
+void	finish_tokenizer(t_minishell *mini, t_token *tk);
+int		tokenizer_find_char(char *string, char needle);
+void	check_flags(t_minishell *mini, char *in, int i, int c);
 t_token	*init_tk();
 
 // PARSER

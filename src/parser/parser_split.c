@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 10:19:20 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/10/25 09:52:52 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/11/21 16:01:13 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,4 @@ void	split_cmd(t_minishell *mini, char *cmd, int i)
 	}
 	free(cmd);
 	mini->commands[mini->split.qtt_comand] = NULL;
-	printf("the commands: [%s::%s::%s]\n", mini->commands[0], mini->commands[1], mini->commands[2]);
 }

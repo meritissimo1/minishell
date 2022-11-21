@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 12:06:09 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/11/18 17:02:24 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/11/21 15:54:26 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,15 @@ void	get_dollar_sign(t_minishell *mini, t_token *tk)
 	n_env = ft_substr(mini->line, tk->i + 1, tk->posic);
 	if (mini->line[tk->i + 1] != '?' && find_env(mini, n_env))
 		extend = ft_strdup(find_env(mini, n_env));
-	printf("%s\n", extend);
+	else if (mini->line[tk->i + 1] == '?')
+		extend = ft_itoa(g_ret_number);
+	else
+		extend = NULL;
+	if (extend)
+		tk->end = ft_strjoin(tk->end, extend);
+	free(extend);
+	tk->i += ft_strlen(n_env) + 1;
+	free(n_env);
+	tk->len = 1;
+	tk->init = tk->i;
 }

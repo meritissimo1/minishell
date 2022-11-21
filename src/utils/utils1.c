@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 13:39:21 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/11/18 16:47:33 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/11/21 15:47:05 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,45 @@ char	*find_env(t_minishell *mini, char *env)
 		aux = aux->next;
 	}
 	return (0);
+}
+
+int	check_quote(t_minishell *mini, char c, char *aux, int nbr)
+{
+	if (mini->token.quote == 0 && (c == QUOTE || c == D_QUOTE))
+		mini->token.quote = c;
+	else
+	{
+		if (mini->token.quote == c)
+			mini->token.quote = 0;
+		else
+		{
+			aux[nbr] = c;
+			nbr++;
+		}
+	}
+	return (nbr);
+}
+
+void	check_flags(t_minishell *mini, char *in, int i, int c)
+{
+	char	*aux;
+
+	mini->token.quote = 0;
+	aux = ft_strtrim(in, " ");
+	mini->flag = false;
+	if (in[0] == '-' && in[1] == 'n')
+	{
+		mini->flag = true;
+		i += 2;
+	}
+	while (in[i] == ' ')
+		i++;
+	while (in[i])
+	{
+		c = check_quote(mini, in[i], aux, c);
+		i++;
+	}
+	aux[c] = '\0';
+	free(mini->token.print);
+	mini->token.print = aux;
 }

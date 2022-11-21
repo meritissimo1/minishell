@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 15:51:21 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/11/18 16:56:58 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/11/21 15:35:08 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ void	tokenizer(t_minishell *mini)
 			tk->i++;
 			tk->len++;
 		}
+		finish_tokenizer(mini, tk);
 	}
 }

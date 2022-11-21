@@ -46,3 +46,41 @@ void	init_split(t_minishell *mini)
 	mini->split.qtt_pipe = 0;
 	mini->split.quote = 0;
 }
+
+void	finish_tokenizer(t_minishell *mini, t_token *tk)
+{
+	tk->new = ft_substr(mini->line, tk->init, tk->len);
+	tk->end = ft_strjoin(tk->end, tk->new);
+	tk->posic = tokenizer_find_char(tk->end, ' ');
+	mini->token.print = ft_strtrim(&(tk->end)[tk->posic], " ");
+	mini->token.exec = ft_substr(tk->end, tk->i + 1, tk->posic);
+	check_flags(mini, mini->token.print, 0, 0);
+	mini->tokens = ft_split(tk->end, ' ');
+	free_tk(tk);
+	free(mini->line);
+}
+
+void	free_tk(t_token *tk)
+{
+	if (tk->end != NULL)
+	{
+		free(tk->end);
+		tk->end = NULL;
+	}
+	if (tk->new != NULL)
+	{
+		free(tk->new);
+		tk->new = NULL;
+	}
+	if (tk->exec != NULL)
+	{
+		free(tk->exec);
+		tk->exec = NULL;
+	}
+	if (tk->print != NULL)
+	{
+		free(tk->print);
+		tk->print = NULL;
+	}
+	free(tk);
+}
