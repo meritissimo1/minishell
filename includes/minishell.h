@@ -7,6 +7,7 @@
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
 /*   Updated: 2022/11/23 18:54:39 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/11/23 12:21:46 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +118,7 @@ void	back_slash(int sig);
 
 // BUILT-INS
 void	is_builtin(t_minishell *mini, char *cmd);
+void	run_builtin(t_minishell *mini);
 void	ft_env(t_env *env_list);
 void	ft_pwd(t_env *env_list);
 void	ft_echo(t_env *cmd_line);

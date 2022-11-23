@@ -7,15 +7,18 @@
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 16:53:51 by marcrodr          #+#    #+#             */
 /*   Updated: 2022/11/23 18:38:55 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/11/23 12:23:34 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void	exec_process(t_minishell *mini, int in_fd, int out_fd)
+void	exec_process(t_minishell *mini, int input_fd, int out_fd)
 {
 	pid_t	pid;
-	in_fd = 0; out_fd = 0; // deleta isso depois, unused parameter
+	(void)input_fd;
+	(void)out_fd;
+  
 	if (mini->is_builtin && mini->tokens[0])
 		run_builtin(mini);
 	else
