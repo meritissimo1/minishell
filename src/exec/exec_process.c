@@ -6,15 +6,17 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 16:53:51 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/11/22 17:26:05 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/11/23 12:23:34 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void	exec_process(t_minishell *mini, int in_fd, int out_fd)
+void	exec_process(t_minishell *mini, int input_fd, int out_fd)
 {
 	pid_t	pid;
+	(void)input_fd;
+	(void)out_fd;
 	if (mini->is_builtin && mini->tokens[0])
 		run_builtin(mini);
 	else

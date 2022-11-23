@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/11/22 17:22:49 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/11/23 12:21:46 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,7 @@ void	back_slash(int sig);
 
 // BUILT-INS
 void	is_builtin(t_minishell *mini, char *cmd);
+void	run_builtin(t_minishell *mini);
 void	ft_env(t_env *env_list);
 void	ft_pwd(t_env *env_list);
 void	ft_echo(char *cmd_line);
