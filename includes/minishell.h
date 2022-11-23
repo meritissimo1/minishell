@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/11/21 15:55:00 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/11/22 17:22:49 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,7 @@ typedef struct s_token
 	int		posic;	
 }			t_token;
 
-typedef struct s_cmdtable
-{
-	char	*line;
-	
-}			t_cmdtable;
+
 
 typedef struct s_minishell
 {
@@ -100,7 +96,6 @@ typedef struct s_minishell
 	t_env		envp;
 	t_token		token;
 	t_split		split;
-	t_cmdtable	*cmdtable;
 }				t_minishell;
 
 int	g_ret_number;
@@ -112,12 +107,20 @@ t_env	initialize_env(char **envp);
 
 // FUNCTIONS
 int 	check_args(int argc);
+
+// SIGNALS
 void	define_signals(void);
+void	run_signals(int sig);
+void	ctrl_c(int sig);
+void	back_slash(int sig);
 
 // BUILT-INS
+void	is_builtin(t_minishell *mini, char *cmd);
 void	ft_env(t_env *env_list);
 void	ft_pwd(t_env *env_list);
 void	ft_echo(char *cmd_line);
+
+
 
 // UTILS
 char	*skip_space(char *str);
@@ -149,5 +152,6 @@ char	**re_redir(t_minishell *mini, char **file, int c);
 char	*new_comman(int i, char **file);
 void	read_until(char *file);
 int		find_char(char *str, char wanted);
+void	exec_process(t_minishell *mini, int in_fd, int out_fd);
 
 #endif

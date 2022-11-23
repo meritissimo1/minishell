@@ -6,7 +6,7 @@
 #    By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 09:12:07 by marcrodr          #+#    #+#              #
-#    Updated: 2022/11/21 14:53:02 by marcrodr         ###   ########.fr        #
+#    Updated: 2022/11/22 16:57:05 by marcrodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,7 @@ PARSER_SRC	= parser_split.c get_cmdtable.c tokenizer.c
 
 ## Exec
 EXEC_DIR = exec
-EXEC_SRC = exec_commands.c redirect_out.c redirect_in.c
+EXEC_SRC = exec_commands.c redirect_out.c redirect_in.c exec_process.c
 
 SRCS		=	$(MAIN_SRC) \
 				$(addprefix $(ERROR_DIR)/, $(ERROR_SRC)) \

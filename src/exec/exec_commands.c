@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 10:20:37 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/11/22 15:56:12 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/11/22 16:53:32 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	run_commands_aux(t_minishell *mini)
 		if (mini->tokens[0])
 			is_builtin(mini, mini->tokens[0]);
 		if (mini->input_fd != -1)
-			
+			exec_process(mini, mini->input_fd, mini->out_fd);
 		
 	 }
 	 
