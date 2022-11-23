@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handler.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 17:20:29 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/11/22 17:21:08 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/11/23 19:04:31 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	run_signals(int sig)
 {
 	if (sig == 1)
 	{
-		signal(SIGINT, restore_prompt);
+		//signal(SIGINT, restore_prompt);
 		signal(SIGQUIT, SIG_IGN);
 	}
 	if (sig == 2)
