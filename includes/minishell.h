@@ -3,9 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
+/*   Updated: 2022/11/23 18:54:39 by fmoreira         ###   ########.fr       */
 /*   Updated: 2022/11/23 12:21:46 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -18,8 +19,9 @@
 # include <signal.h>
 # include <stdbool.h>
 # include <sys/wait.h>
-# include <readline/history.h>
 # include <readline/readline.h>
+# include <readline/history.h>
+# include <stdio.h>
 
 # define CYAN "\001\033[1;36m\002"
 # define WHITE "\001\033[0m\002"
@@ -119,7 +121,7 @@ void	is_builtin(t_minishell *mini, char *cmd);
 void	run_builtin(t_minishell *mini);
 void	ft_env(t_env *env_list);
 void	ft_pwd(t_env *env_list);
-void	ft_echo(char *cmd_line);
+void	ft_echo(t_env *cmd_line);
 
 
 
@@ -154,5 +156,6 @@ char	*new_comman(int i, char **file);
 void	read_until(char *file);
 int		find_char(char *str, char wanted);
 void	exec_process(t_minishell *mini, int in_fd, int out_fd);
+void	run_builtin(t_minishell *mini);
 
 #endif

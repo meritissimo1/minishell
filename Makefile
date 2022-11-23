@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 09:12:07 by marcrodr          #+#    #+#              #
-#    Updated: 2022/11/22 16:57:05 by marcrodr         ###   ########.fr        #
+#    Updated: 2022/11/23 18:43:01 by fmoreira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ ERROR_SRC	= check_args.c
 
 ## Signal
 SIGNAL_DIR	= signals
-SIGNAL_SRC	= signal.c
+SIGNAL_SRC	= signal.c handler.c
 
 ## Utils
 UTILS_DIR	= utils
