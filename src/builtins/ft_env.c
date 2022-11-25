@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_env.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 01:35:56 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/09/24 02:04:53 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/11/23 13:02:17 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void	ft_env(t_env *env_list)
+void	ft_env(t_minishell *mini)
 {
 	t_nenv	*aux;
 
 	aux = (t_nenv *)ft_calloc(sizeof(t_nenv), 1);
 	aux = ft_node_format(aux);
-	aux = env_list->top_node;
+	aux = mini->envp.top_node;
 
 	while (aux->next)
 	{

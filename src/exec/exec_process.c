@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   exec_process.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 16:53:51 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/11/23 18:38:55 by fmoreira         ###   ########.fr       */
-/*   Updated: 2022/11/23 12:23:34 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/11/24 20:45:36 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "minishell.h"
 
@@ -32,9 +32,27 @@ void	exec_process(t_minishell *mini, int input_fd, int out_fd)
 		}
 		else if (pid == 0)
 		{
+			fd_handler(input_fd, out_fd);
+			g_ret_number = 127;
 			
+							
 		}
 	}	
+}
+
+int	fd_handler(int input_fd, int out_fd)
+{
+	if (input_fd != 0)
+	{
+		dup2(input_fd, 0);
+		close(input_fd);
+	}
+	if (out_fd != 1)
+	{
+		dup2(out_fd, 1);
+		close(out_fd);
+	}
+	return (0);
 }
 
 void	run_builtin(t_minishell *mini)
@@ -43,13 +61,13 @@ void	run_builtin(t_minishell *mini)
 	if (!ft_strncmp(mini->tokens[0], "exit", 4))
 		i++;//ft_exit(&mini->envp);
 	if (!ft_strncmp(mini->tokens[0], "pwd", 3))
-		ft_pwd(&mini->envp);
+		i++;//ft_pwd(&mini->envp);
 	if (!ft_strncmp(mini->tokens[0], "echo", 4))
-		ft_echo(&mini->envp);
+		ft_echo(mini);
 	if (!ft_strncmp(mini->tokens[0], "cd", 2))
 		i++;//ft_cd(&mini->envp);
 	if (!ft_strncmp(mini->tokens[0], "env", 3))
-		ft_env(&mini->envp);
+		i++;//ft_env(&mini->envp);
 	if (!ft_strncmp(mini->tokens[0], "export", 6))
 		i++;//ft_export(&mini->envp);
 	if (!ft_strncmp(mini->tokens[0], "unset", 5))

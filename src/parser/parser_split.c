@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 10:19:20 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/11/21 16:01:13 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/11/23 13:10:44 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ void	split_cmd(t_minishell *mini, char *cmd, int i)
 {
 	init_split(mini);
 	cmd = skip_space(cmd);
-	int a = ft_strlen(cmd);
-	(void)a;
+
 	while (i < (int)ft_strlen(cmd)) 
 	{
 		if (mini->split.quote == 0 && (cmd[i] == D_QUOTE || cmd[i] == QUOTE))

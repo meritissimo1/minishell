@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/11/23 18:54:39 by fmoreira         ###   ########.fr       */
-/*   Updated: 2022/11/23 12:21:46 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/11/24 20:45:44 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef MINISHELL_H
 # define MINISHELL_H 
@@ -119,9 +119,9 @@ void	back_slash(int sig);
 // BUILT-INS
 void	is_builtin(t_minishell *mini, char *cmd);
 void	run_builtin(t_minishell *mini);
-void	ft_env(t_env *env_list);
-void	ft_pwd(t_env *env_list);
-void	ft_echo(t_env *cmd_line);
+void	ft_env(t_minishell *mini);
+void	ft_pwd(t_minishell *mini);
+void	ft_echo(t_minishell *mini);
 
 
 
@@ -157,5 +157,6 @@ void	read_until(char *file);
 int		find_char(char *str, char wanted);
 void	exec_process(t_minishell *mini, int in_fd, int out_fd);
 void	run_builtin(t_minishell *mini);
+int		fd_handler(int input_fd, int out_fd);
 
 #endif
