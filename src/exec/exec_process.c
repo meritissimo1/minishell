@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 16:53:51 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/11/24 20:45:36 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/11/28 20:46:56 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,13 @@ void	exec_process(t_minishell *mini, int input_fd, int out_fd)
 		{
 			fd_handler(input_fd, out_fd);
 			g_ret_number = 127;
-			
-							
+				
+								
 		}
+		else
+			waitpid(pid, &g_ret_number, WUNTRACED);
+		if (WIFEXITED(g_ret_number))
+			g_ret_number = WEXITSTATUS(g_ret_number);
 	}	
 }
 
