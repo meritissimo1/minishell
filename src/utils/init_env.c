@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 14:18:45 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/11/18 16:47:00 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/11/30 18:24:07 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ t_env	initialize_env(char **envp)
 	char	**env;
 	int		count;
 
+	env_list.env = envp;
 	count = 0;
 	ft_initialize_list(&env_list);
 	env_list.top_node = ft_node_format(env_list.top_node);

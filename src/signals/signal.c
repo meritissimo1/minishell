@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 10:39:03 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/11/22 17:23:51 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/11/30 17:50:11 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 static void handler(int signal)
 {
-	char c;
-	c = signal + '0';
-	write(1, &c, 1);	// escrevendo o signal	
+	write(1, &signal, 1);	
 	g_ret_number = 130;
 	ft_putstr_fd("\n", 1);
 	rl_replace_line("", 0);
@@ -24,19 +22,18 @@ static void handler(int signal)
 	rl_redisplay();
 }
 
-static void	exec_handler(int signal)
+void	run_signals(int sig)
 {
-	char c;
-	c = signal + '0';
-	write(1, &c, 1);
-	ft_putstr_fd("\n exec", 1);
-	waitpid(-1, NULL, WUNTRACED);
-	g_ret_number = 130;
-}
-
-void	define_exec_signals(void)
-{
-	signal(SIGINT, exec_handler);
+	if (sig == 2)
+	{
+		signal(SIGINT, ctrl_c);
+		signal(SIGQUIT, back_slash);
+	}
+	if (sig == 3)
+	{
+		printf("exit\n");
+		exit(0);
+	}
 }
 
 void	define_signals(void)
@@ -44,4 +41,18 @@ void	define_signals(void)
 	signal(SIGINT, handler);
 	signal(SIGTSTP, SIG_IGN);
 	signal(SIGQUIT, SIG_IGN);
+}
+
+void	ctrl_c(int sig)
+{
+	g_ret_number = 130;
+	write(1, "\n", 1);
+	(void)sig;
+}
+
+void	back_slash(int sig)
+{
+	g_ret_number = 131;
+	printf("Quit (core dumped)\n");
+	(void)sig;
 }

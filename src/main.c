@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:03:35 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/11/23 12:54:22 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/11/30 18:24:24 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int main(int argc, char **argv, char **env)
 
 	check_args(argc);
 	mini.envp = initialize_env(env);
+	init_path(&mini);
 	//ft_env(&envp);//	teste do builtin "env"
 	//ft_echo("echo -n aopa meu brasil");
 	//ft_pwd(&envp);//	teste do builtin "pwd"

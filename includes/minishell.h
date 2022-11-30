@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/11/24 20:45:44 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/11/30 18:25:11 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@
 # define ERROR_DIR "No such file or directory\n"
 
 
-
 int		g_ret_number;
 
 typedef	struct	s_nenv
@@ -55,6 +54,7 @@ typedef struct	s_env
 	unsigned long int	size;
 	struct s_nenv		*top_node;
 	int					index;
+	char				**env;
 }	t_env;
 
 typedef struct s_split
@@ -95,6 +95,7 @@ typedef struct s_minishell
 	int			append;
 	char		*commands[50];
 	char		**tokens;
+	char		**path;
 	t_env		envp;
 	t_token		token;
 	t_split		split;
@@ -134,6 +135,7 @@ void	get_dollar_sign(t_minishell *mini, t_token *tk);
 int		count_pipe(t_minishell *mini, char *cmd, int i);
 void	free_array(char **array);
 void	free_tk(t_token *tk);
+int	init_path(t_minishell *mini);
 char	*find_env(t_minishell *mini, char *env);
 void	finish_tokenizer(t_minishell *mini, t_token *tk);
 int		tokenizer_find_char(char *string, char needle);

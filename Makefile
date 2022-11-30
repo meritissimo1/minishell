@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 09:12:07 by marcrodr          #+#    #+#              #
-#    Updated: 2022/11/23 18:43:01 by fmoreira         ###   ########.fr        #
+#    Updated: 2022/11/30 18:31:13 by marcrodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,11 +36,11 @@ ERROR_SRC	= check_args.c
 
 ## Signal
 SIGNAL_DIR	= signals
-SIGNAL_SRC	= signal.c handler.c
+SIGNAL_SRC	= signal.c
 
 ## Utils
 UTILS_DIR	= utils
-UTILS_SRC	= init_env.c is_char_validated.c utils.c utils1.c token.c
+UTILS_SRC	= init_env.c is_char_validated.c utils.c utils1.c token.c path.c
 
 ## Built-ins
 BUILT_DIR	= builtins

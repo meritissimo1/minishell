@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 10:20:37 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/11/22 16:53:32 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/11/30 17:26:49 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,7 @@ void	exec_commands(t_minishell *mini)
 		close(mini->out_fd);
 		i++;
 	}
-	run_commands_aux(mini);		
-
-
+	run_commands_aux(mini);
 }
 
 void	run_commands_aux(t_minishell *mini)
