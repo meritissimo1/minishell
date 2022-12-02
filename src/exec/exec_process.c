@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 16:53:51 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/11/30 18:32:19 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/01 16:28:17 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	exec_process(t_minishell *mini, int input_fd, int out_fd)
 		{
 			fd_handler(input_fd, out_fd);
 			g_ret_number = 127;
+			ft_execve_pipe(mini, 0, "");
 			
 				
 								
@@ -63,18 +64,26 @@ int	fd_handler(int input_fd, int out_fd)
 void	ft_execve_pipe(t_minishell *mini, int i, char *command)
 {
 	if (mini->tokens[0])
-	{
 		g_ret_number = execve(mini->tokens[0], &mini->tokens[0],
 				mini->envp.env);
-	}
 	while (mini->path && mini->path[i] != NULL)
 	{
 		command = ft_strdup(mini->path[i]);
 		if (mini->tokens[0][0] == '|' && mini->tokens[1])
 		{
-			(void)command;
+			if (!mini->tokens[0][1])
+				spacein_pipe(mini, 2, command);
+			else
+			{
+				mini->tokens[0] = &mini->tokens[0][1];
+				spacein_pipe(mini, 1, command);
+			}
 		}
+		else
+			spacein_pipe(mini, 1, command);
+		i++;
 	}
+	execve_error(mini);
 }
 
 void	run_builtin(t_minishell *mini)

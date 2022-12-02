@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/11/30 18:25:11 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/01 16:29:01 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@
 **  Macros to define some messages error
 */
 # define ERROR_DIR "No such file or directory\n"
+# define ERROR_CMD "command not found\n"
 
 
 int		g_ret_number;
@@ -124,10 +125,9 @@ void	ft_env(t_minishell *mini);
 void	ft_pwd(t_minishell *mini);
 void	ft_echo(t_minishell *mini);
 
-
-
 // UTILS
 char	*skip_space(char *str);
+void	spacein_pipe(t_minishell *mini, int i, char *command);
 void	init_split(t_minishell *mini);
 void	ft_print_ppc(char  **splited, int aux);
 void	get_home_sign(t_minishell *mini, t_token *tk);
@@ -135,10 +135,12 @@ void	get_dollar_sign(t_minishell *mini, t_token *tk);
 int		count_pipe(t_minishell *mini, char *cmd, int i);
 void	free_array(char **array);
 void	free_tk(t_token *tk);
-int	init_path(t_minishell *mini);
+int		init_path(t_minishell *mini);
+void	free_token(char **array);
 char	*find_env(t_minishell *mini, char *env);
 void	finish_tokenizer(t_minishell *mini, t_token *tk);
 int		tokenizer_find_char(char *string, char needle);
+void	execve_error(t_minishell *mini);
 void	check_flags(t_minishell *mini, char *in, int i, int c);
 t_token	*init_tk();
 
@@ -157,6 +159,7 @@ char	**re_redir(t_minishell *mini, char **file, int c);
 char	*new_comman(int i, char **file);
 void	read_until(char *file);
 int		find_char(char *str, char wanted);
+void	ft_execve_pipe(t_minishell *mini, int i, char *command);
 void	exec_process(t_minishell *mini, int in_fd, int out_fd);
 void	run_builtin(t_minishell *mini);
 int		fd_handler(int input_fd, int out_fd);
