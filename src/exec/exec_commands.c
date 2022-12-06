@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 10:20:37 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/11/30 17:26:49 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/06 10:29:57 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,12 @@ void	run_commands_aux(t_minishell *mini)
 			is_builtin(mini, mini->tokens[0]);
 		if (mini->input_fd != -1)
 			exec_process(mini, mini->input_fd, mini->out_fd);
-		
+		free_array(mini->tokens);
+		free(mini->token.print);
+		free(mini->token.exec);
 	 }
-	 
+	 if (mini->name_file)
+	 	unlink(mini->name_file);	 
 }
 
 void	action(t_minishell *mini)

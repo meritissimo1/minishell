@@ -48,7 +48,7 @@ void	read_until(char *file)
 
 	flags = O_WRONLY | O_CREAT | O_TRUNC;
 	line = ft_strdup("");
-	fd = open(file, flags, 0777);
+	fd = open(file, flags, 0644);
 	while (ft_strncmp(line, file, ft_strlen(file))
 			|| ft_strlen(line) != ft_strlen(file))
 	{

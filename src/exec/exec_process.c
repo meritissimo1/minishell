@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 16:53:51 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/01 16:28:17 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/06 11:31:05 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,7 @@ void	exec_process(t_minishell *mini, int input_fd, int out_fd)
 			fd_handler(input_fd, out_fd);
 			g_ret_number = 127;
 			ft_execve_pipe(mini, 0, "");
-			
-				
-								
+			exit(g_ret_number);
 		}
 		else
 			waitpid(pid, &g_ret_number, WUNTRACED);

@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 12:06:09 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/11/21 15:54:26 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/06 10:37:10 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,17 @@ void	get_dollar_sign(t_minishell *mini, t_token *tk)
 	free(n_env);
 	tk->len = 1;
 	tk->init = tk->i;
+}
+
+void	free_commands(char **array)
+{
+	int	i;
+
+	i = 0;
+	while (array[i] != NULL)
+	{
+		free(array[i]);
+		array[i] = NULL;
+		i++;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/01 16:29:01 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/06 17:52:13 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@
 */
 # define ERROR_DIR "No such file or directory\n"
 # define ERROR_CMD "command not found\n"
+# define ERROR_PIPE "minishell: syntax error near unexpected token `|'\n"
 
 
 int		g_ret_number;
@@ -102,8 +103,6 @@ typedef struct s_minishell
 	t_split		split;
 }				t_minishell;
 
-int	g_ret_number;
-
 t_nenv	*ft_node_format(t_nenv	*node);
 void	ft_initialize_list(t_env *env_list);
 void	ft_more_envp(t_env *env_list, char **env);
@@ -142,6 +141,7 @@ void	finish_tokenizer(t_minishell *mini, t_token *tk);
 int		tokenizer_find_char(char *string, char needle);
 void	execve_error(t_minishell *mini);
 void	check_flags(t_minishell *mini, char *in, int i, int c);
+void	free_commands(char **array);
 t_token	*init_tk();
 
 // PARSER

@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:03:35 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/11/30 18:24:24 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/06 10:37:53 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ int main(int argc, char **argv, char **env)
 		split_cmd(&mini, command_line, 0);
 		if (mini.split.qtt_comand > 0 && mini.commands[0][0] != '|')
 			exec_commands(&mini);
+		if (mini.commands[0] && mini.commands[0][0] == '|')
+			printf(ERROR_PIPE);
+		free_commands(mini.commands);
 	}
 	return (0);
 }
