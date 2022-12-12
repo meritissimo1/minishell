@@ -26,13 +26,13 @@ void	ft_print_ppc(char  **splited, int aux)
 	int	i;
 
 	i = 0;
-	while (splited[i])
+	while (splited[i++])
 	{
-		printf("%s", splited[i++]);
+		printf("%s", splited[i]);
 		if (aux == 0)
 			printf(" ");
-		if (aux == 1 && ft_strcmp(splited[i], "\n"))
-			break;
+		//if (aux == 1 && ft_strcmp(splited[i], "\n"))
+		//	break;
 	}
 	if (aux == 0)
 		printf("\n");
