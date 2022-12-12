@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_echo.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 19:07:02 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/11/23 13:04:53 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/12 15:54:38 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,17 @@
 // a funçao vai printar caso elas sejam equivalentes o echo funciona corretamente.
 void	ft_echo(t_minishell *mini)
 {
-	char	*aux;
-	int	i;
-
-	i = 0
-	;
-}
-
-int	ft_echo_authn(char *rawline, char *words)
-{
-
+	//printf("socorro deus");
+	ft_print_ppc(mini->tokens, 0);
 }
 /*
+int	ft_echo_authn(char *rawline, char *words)
+{
+	char	find_quotes;
+	int		i;
+
+}
+
 {
 	char	**splited;
 
