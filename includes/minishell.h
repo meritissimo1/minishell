@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/06 18:10:00 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/12 10:41:55 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,7 @@ typedef struct s_minishell
 	char		*commands[50];
 	char		**tokens;
 	char		**path;
+	char		*rawline;
 	t_env		envp;
 	t_token		token;
 	t_split		split;
@@ -106,7 +107,7 @@ typedef struct s_minishell
 t_nenv	*ft_node_format(t_nenv	*node);
 void	ft_initialize_list(t_env *env_list);
 void	ft_more_envp(t_env *env_list, char **env);
-t_env	initialize_env(char **envp);
+t_env	ft_initialize_env(char **envp);
 
 // FUNCTIONS
 int 	check_args(int argc);

@@ -12,7 +12,22 @@
 
 #include "minishell.h"
 
+// quero criar uma funçao que percorra o readline (rawline) procurando as paravras separadas do **tokens, caso estejam todas ok
+// a funçao vai printar caso elas sejam equivalentes o echo funciona corretamente.
 void	ft_echo(t_minishell *mini)
+{
+	char	*aux;
+	int	i;
+
+	i = 0
+	;
+}
+
+int	ft_echo_authn(char *rawline, char *words)
+{
+
+}
+/*
 {
 	char	**splited;
 
@@ -23,3 +38,4 @@ void	ft_echo(t_minishell *mini)
 	else
 		ft_print_ppc(splited, 1);
 }
+*/

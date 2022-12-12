@@ -12,7 +12,7 @@
 
 #include "minishell.h"
 
-t_env	initialize_env(char **envp)
+t_env	ft_initialize_env(char **envp)
 {
 	t_env	env_list;
 	char	**env;
@@ -53,7 +53,6 @@ void	ft_more_envp(t_env *env_list, char **env)
 	}
 	new->var = env[0];
 	new->content = env[1];
-	//printf("var: %s ### content: %s \n", new->var, new->content);
 	env_list->size++;
 }
 
