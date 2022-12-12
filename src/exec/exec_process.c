@@ -90,13 +90,13 @@ void	run_builtin(t_minishell *mini)
 	if (!ft_strncmp(mini->tokens[0], "exit", 4))
 		i++;//ft_exit(&mini->envp);
 	if (!ft_strncmp(mini->tokens[0], "pwd", 3))
-		i++;//ft_pwd(&mini->envp);
+		ft_pwd(mini);
 	if (!ft_strncmp(mini->tokens[0], "echo", 4))
 		ft_echo(mini);
 	if (!ft_strncmp(mini->tokens[0], "cd", 2))
 		i++;//ft_cd(&mini->envp);
 	if (!ft_strncmp(mini->tokens[0], "env", 3))
-		i++;//ft_env(&mini->envp);
+		ft_env(mini);
 	if (!ft_strncmp(mini->tokens[0], "export", 6))
 		i++;//ft_export(&mini->envp);
 	if (!ft_strncmp(mini->tokens[0], "unset", 5))

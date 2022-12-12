@@ -20,6 +20,7 @@ void	ft_env(t_minishell *mini)
 	aux = ft_node_format(aux);
 	aux = mini->envp.top_node;
 
+	printf("alo funciona\n");
 	while (aux->next)
 	{
 		printf("%s=%s\n", aux->var, aux->content);
