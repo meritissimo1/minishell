@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/06 17:52:13 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/06 18:10:00 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@
 # define ERROR_PIPE "minishell: syntax error near unexpected token `|'\n"
 
 
-int		g_ret_number;
+extern int	g_ret_number;
 
 typedef	struct	s_nenv
 {
