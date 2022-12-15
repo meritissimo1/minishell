@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_process.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 16:53:51 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/12 15:46:27 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/12 16:16:24 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 void	exec_process(t_minishell *mini, int input_fd, int out_fd)
 {
 	pid_t	pid;
-	(void)input_fd;
-	(void)out_fd;
   
 	if (mini->is_builtin && mini->tokens[0])
 		run_builtin(mini);

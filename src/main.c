@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:03:35 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/07 00:44:00 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/12 16:35:52 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ int main(int argc, char **argv, char **env)
 	(void)argv;
 	while(42)
 	{
-		define_signals();//	signal.c
+		mini.out_fd = STDOUT_FILENO;
+		mini.input_fd = STDIN_FILENO;
+		define_signals();	//	signal.c
 		command_line = get_input_line(PROMPT);
 		if (command_line == NULL)
 			break ;

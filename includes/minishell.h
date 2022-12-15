@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/12 10:41:55 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/12 16:36:09 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,10 +87,10 @@ typedef struct s_minishell
 {
 	char		*line;
 	int			c;
-	int			out_fd;
 	bool		is_builtin;
 	bool		flag;
 	int			redirect;
+	int			out_fd;
 	int			input_fd;
 	char		*name_file;
 	char		*error_name_file;

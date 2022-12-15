@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser_split.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 10:19:20 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/07 01:36:14 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/12 11:29:49 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	split_cmd(t_minishell *mini, char *cmd, int i)
 		mini->split.len++;
 		i++;
 	}
-	if (ft_strlen(cmd) > 0)
+	if (mini->split.len > 0)
 	{
 		mini->commands[mini->split.qtt_comand] =
 			ft_substr(cmd, mini->split.ini, i);
