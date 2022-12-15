@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:03:35 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/15 16:27:05 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/15 16:37:41 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,11 @@ int g_ret_number;
 
 int main(int argc, char **argv, char **env)
 {
-	g_ret_number = 0;
 	t_minishell	mini;
 	char		*command_line;
 
-	check_args(argc); //	error.c
-	init(&mini); // init.c
-	(void)argv;
+	check_args(argc); 	// error.c
+	init(&mini); 		// init.c
 	while(42)
 	{
 		mini.out_fd = STDOUT_FILENO;

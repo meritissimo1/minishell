@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 12:06:09 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/06 10:37:10 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/15 16:36:37 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	get_home_sign(t_minishell *mini, t_token *tk)
 	tk->new = ft_substr(mini->line, tk->init, tk->len - 1);
 	tk->end = ft_strjoin(tk->end, tk->new);
 	free(tk->new);
-	extend = "home"; //mini->home;
+	extend = mini->home;
 	tk->end = ft_strjoin(tk->end, extend);
 	tk->i++;
 	tk->len = 1;
