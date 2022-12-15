@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:28:51 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/10/25 09:57:12 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/15 16:09:45 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int	count_pipe(t_minishell *mini, char *cmd, int i)
 				i++;
 				mini->split.len = 1;
 			}
-			printf("Tem um separador %c nessa posicao -> %d e o n° de pipes é %d\n", cmd[mini->split.ini] , mini->split.ini, mini->split.qtt_pipe);			
 		}
 	}
 	return (i);

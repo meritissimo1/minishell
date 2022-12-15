@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:03:35 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/12 16:35:52 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/15 16:27:05 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ int main(int argc, char **argv, char **env)
 	char		*command_line;
 
 	check_args(argc); //	error.c
-	mini.envp = ft_initialize_env(env);//	init_env.c
-	init_path(&mini);//	path.c
+	init(&mini); // init.c
 	(void)argv;
 	while(42)
 	{

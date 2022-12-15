@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/12 16:36:09 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/15 16:24:19 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,7 @@ typedef struct s_minishell
 	char		**tokens;
 	char		**path;
 	char		*rawline;
+	char		*home;
 	t_env		envp;
 	t_token		token;
 	t_split		split;
