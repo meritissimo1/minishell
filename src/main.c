@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:03:35 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/15 16:37:41 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/16 18:26:44 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ int main(int argc, char **argv, char **env)
 	t_minishell	mini;
 	char		*command_line;
 
+	(void)argv;
 	check_args(argc); 	// error.c
-	init(&mini); 		// init.c
+	init(&mini, env); 		// init.c
 	while(42)
 	{
 		mini.out_fd = STDOUT_FILENO;

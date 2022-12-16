@@ -23,16 +23,18 @@ char	*skip_space(char *str)
 
 void	ft_print_ppc(char  **splited, int aux)
 {
-	int	i;
-
+	int		i;
+	char	ok;
 	i = 0;
+	ok = 0;
 	while (splited[i++])
 	{
+		if (aux == 1 && ok++ < 2)
+			i++;
 		printf("%s", splited[i]);
-		if (aux == 0)
-			printf(" ");
-		//if (aux == 1 && ft_strcmp(splited[i], "\n"))
-		//	break;
+		if (splited[i + 1] == NULL)
+			i++;
+		printf(" ");
 	}
 	if (aux == 0)
 		printf("\n");
