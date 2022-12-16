@@ -21,7 +21,7 @@ char	*skip_space(char *str)
 	return (str);
 }
 
-void	ft_print_ppc(char  **splited, int aux)
+void	ft_print_ppc(char  **splited, int fd, int aux)
 {
 	int		i;
 	char	ok;
@@ -29,15 +29,15 @@ void	ft_print_ppc(char  **splited, int aux)
 	ok = 0;
 	while (splited[i++])
 	{
-		if (aux == 1 && ok++ < 2)
+		if (aux == 1 && ok++ < 1)
 			i++;
-		printf("%s", splited[i]);
+		ft_putstr_fd(splited[i], fd);
 		if (splited[i + 1] == NULL)
 			i++;
-		printf(" ");
+		write(fd, " ", 1);
 	}
 	if (aux == 0)
-		printf("\n");
+		write(fd, "\n", 1);
 }
 
 void	init_split(t_minishell *mini)

@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/16 18:26:06 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/16 20:30:31 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,7 @@ void	ft_echo(t_minishell *mini);
 char	*skip_space(char *str);
 void	spacein_pipe(t_minishell *mini, int i, char *command);
 void	init_split(t_minishell *mini);
-void	ft_print_ppc(char  **splited, int aux);
+void	ft_print_ppc(char  **splited, int fd, int aux);
 void	get_home_sign(t_minishell *mini, t_token *tk);
 void	get_dollar_sign(t_minishell *mini, t_token *tk);
 int		count_pipe(t_minishell *mini, char *cmd, int i);
