@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/15 16:24:19 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/16 15:10:36 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,6 +144,8 @@ int		tokenizer_find_char(char *string, char needle);
 void	execve_error(t_minishell *mini);
 void	check_flags(t_minishell *mini, char *in, int i, int c);
 void	free_commands(char **array);
+void	init(t_minishell *mini, char **env);
+char	*get_input_line(char *prompt);
 t_token	*init_tk();
 
 // PARSER
