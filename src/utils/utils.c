@@ -21,21 +21,23 @@ char	*skip_space(char *str)
 	return (str);
 }
 
-void	ft_print_ppc(char  **splited, int aux)
+void	ft_print_ppc(char  **splited, int fd, int aux)
 {
-	int	i;
-
+	int		i;
+	char	ok;
 	i = 0;
+	ok = 0;
 	while (splited[i++])
 	{
-		printf("%s", splited[i]);
-		if (aux == 0)
-			printf(" ");
-		//if (aux == 1 && ft_strcmp(splited[i], "\n"))
-		//	break;
+		if (aux == 1 && ok++ < 1)
+			i++;
+		ft_putstr_fd(splited[i], fd);
+		if (splited[i + 1] == NULL)
+			i++;
+		write(fd, " ", 1);
 	}
 	if (aux == 0)
-		printf("\n");
+		write(fd, "\n", 1);
 }
 
 void	init_split(t_minishell *mini)

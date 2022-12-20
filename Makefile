@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 09:12:07 by marcrodr          #+#    #+#              #
-#    Updated: 2022/12/16 15:08:05 by marcrodr         ###   ########.fr        #
+#    Updated: 2022/12/16 18:28:07 by fmoreira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
