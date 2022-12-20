@@ -21,3 +21,13 @@ void	init(t_minishell *mini, char **env)
 	mini->home = ft_strdup(find_env(mini, "HOME"));
 	init_path(mini);
 }
+
+char	*get_input_line(char *prompt)
+{
+	char	*input;
+	input = readline(prompt);
+	if (input == NULL)
+		return (NULL);
+	else
+		return(input);
+}

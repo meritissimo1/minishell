@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 10:20:37 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/06 10:29:57 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/16 15:39:05 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@ void	exec_commands(t_minishell *mini)
 		mini->out_fd = fd[1];
 		run_commands_aux(mini);		
 		close(mini->out_fd);
+		if (mini->input_fd != 0)
+			close(mini->input_fd);
+		mini->input_fd = fd[0];
 		i++;
 	}
 	run_commands_aux(mini);
