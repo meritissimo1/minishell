@@ -45,6 +45,7 @@ void	init_split(t_minishell *mini)
 	mini->split.len = 0;
 	mini->split.qtt_pipe = 0;
 	mini->split.quote = 0;
+	mini->redirect = 0;
 }
 
 void	finish_tokenizer(t_minishell *mini, t_token *tk)
