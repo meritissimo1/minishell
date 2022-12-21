@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_env.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 01:35:56 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/11/23 13:02:17 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/20 17:54:26 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@ void	ft_env(t_minishell *mini)
 	aux = ft_node_format(aux);
 	aux = mini->envp.top_node;
 
-	printf("alo funciona\n");
 	while (aux->next)
 	{
-		printf("%s=%s\n", aux->var, aux->content);
+		ft_putstr_fd(aux->var, mini->out_fd);
+		write(mini->out_fd, "=", 1);
+		ft_putstr_fd(aux->content, mini->out_fd);
+		write(mini->out_fd, "\n", 1);
 		aux = aux->next;
 	}
 }
