@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/16 20:30:31 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/20 20:28:57 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,7 @@ void	run_builtin(t_minishell *mini);
 void	ft_env(t_minishell *mini);
 void	ft_pwd(t_minishell *mini);
 void	ft_echo(t_minishell *mini);
+void	ft_cd(t_minishell *mini);
 
 // UTILS
 char	*skip_space(char *str);

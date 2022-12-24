@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 16:53:51 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/16 19:10:53 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/20 20:30:47 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	run_builtin(t_minishell *mini)
 	if (!ft_strncmp(mini->tokens[0], "echo", 4))
 		ft_echo(mini);
 	if (!ft_strncmp(mini->tokens[0], "cd", 2))
-		i++;//ft_cd(&mini->envp);
+		ft_cd(mini);
 	if (!ft_strncmp(mini->tokens[0], "env", 3))
 		ft_env(mini);
 	if (!ft_strncmp(mini->tokens[0], "export", 6))
