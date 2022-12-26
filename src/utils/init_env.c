@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_env.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 14:18:45 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/11/30 18:24:07 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/26 18:00:20 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,4 @@ t_nenv	*ft_node_format(t_nenv	*node)
 	if (!node)
 		exit(0);
 	return (node);
-}
+}*no

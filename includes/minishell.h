@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/20 20:28:57 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/26 18:02:03 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,19 @@ typedef struct	s_env
 	int					index;
 	char				**env;
 }	t_env;
+
+typedef struct	s_echo_l
+{
+	unsigned long int	size;
+	struct s_echo_n		*top_node;
+}	t_echo_list;
+
+typedef struct	s_echo_n
+{
+	char			*token;
+	struct s_echo_n	*next;
+} t_echo_node;
+
 
 typedef struct s_split
 {
