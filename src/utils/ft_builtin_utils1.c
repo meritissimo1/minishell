@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_echo_utils.c                                    :+:      :+:    :+:   */
+/*   ft_builtin_utils1.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 17:42:59 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/12/26 19:08:37 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/27 00:55:54 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-t_echo_list	ft_init_echo(char *rawline)
+t_echo_list	ft_init_echo(t_minishell *mini, char *rawline)
 {
 	t_echo_list	echo_list;
-	int			count;
+	//int			count;
 	
-	count = 0;
+	//count = 0;
 	ft_init_echo_list(&echo_list);
 	echo_list.top_node = ft_echo_node_format(echo_list.top_node);
+	echo_list.top_node->token = ft_more_echo_token(mini, rawline);
 	
 }
 
@@ -38,13 +39,14 @@ t_echo_node	*ft_echo_node_format(t_echo_node *node)
 	return (node);
 }
 
-void	ft_more_echo_token(t_echo_list *echo_list, char *rawline)
+char	*ft_more_echo_token(t_minishell *mini, char *rawline)
 {
 	int	i;
 	int j;
 	char	*raw_aux;
 	char	*pre_node;
-	
+	char	*env_find;
+
 	raw_aux = rawline;
 	i = 5;
 	j = 0;
@@ -67,9 +69,24 @@ void	ft_more_echo_token(t_echo_list *echo_list, char *rawline)
 					pre_node[++j] = NULL; //possivelmente por no echo_node
 					break;
 				}
+				else if (raw_aux[i] == "$")
+				{
+					raw_aux++;
+					while (!ft_isalnum(raw_aux[i]))
+					{
+						env_find = raw_aux[i];
+						i++;
+					}
+					env_find[i] = NULL;
+					env_find = ft_env_content(mini->envp, env_find);
+					if	(env_find != 1)
+						i += ft_strlen(env_find);
+					ft_strjoin(pre_node, env_find);
+				}
 				// check if d_quote is close
 			}
 		}
 	}
+	printf("%s\n", pre_node);
 	
 }

@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/26 18:02:03 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/27 00:55:24 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,6 +139,9 @@ void	ft_env(t_minishell *mini);
 void	ft_pwd(t_minishell *mini);
 void	ft_echo(t_minishell *mini);
 void	ft_cd(t_minishell *mini);
+void	ft_init_echo_list(t_echo_list *echo_list);
+t_echo_node	*ft_echo_node_format(t_echo_node *node);
+t_echo_list	ft_init_echo(t_minishell *mini, char *rawline);
 
 // UTILS
 char	*skip_space(char *str);
