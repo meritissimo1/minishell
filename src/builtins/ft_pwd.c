@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pwd.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 02:01:31 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/11/23 13:03:02 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/20 19:18:34 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,15 @@
 
 void	ft_pwd(t_minishell *mini)
 {
-	t_nenv	*aux;
-//	int		count; // set but not used
+	char *buf;
 
-	aux = (t_nenv *)ft_calloc(sizeof(t_nenv), 1);
-	aux = ft_node_format(aux);
-	aux = mini->envp.top_node;
-//	count = 0;
-
-	while (ft_strcmp(aux->var, "PWD"))
-	{
-		aux = aux->next;
-	}
-
-	if (!ft_strcmp(aux->var, "PWD"))
-	{
-		printf("%s\n", aux->content);
-	}
+	buf = NULL;
+	buf = getcwd(buf, 2000);
+	ft_putstr_fd(buf, mini->out_fd);
+	write(mini->out_fd, "\n", 1);
+	if (buf == NULL)
+		g_ret_number = 1;
 	else
-		printf("PWD doesn't exist\n");
+		g_ret_number = 0;
+	free(buf);
 }
