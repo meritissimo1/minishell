@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:03:35 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/16 18:26:44 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/26 15:57:05 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,11 @@ int main(int argc, char **argv, char **env)
 		mini.input_fd = STDIN_FILENO;
 		define_signals();	//	signal.c
 		command_line = get_input_line(PROMPT);
+		mini.rawline = command_line;
 		if (command_line == NULL)
 			break ;
 		if (strncmp(command_line, "", 1) != 0)
 			add_history(command_line);
-		if (!strncmp(command_line, "faze", 7))	//	remover depois
-			exit(0);
-		mini.rawline = command_line;
 		split_cmd(&mini, command_line, 0);		//	parser_split.c
 		if (mini.split.qtt_comand > 0 && mini.commands[0][0] != '|')
 			exec_commands(&mini);//	exec_commands.c
