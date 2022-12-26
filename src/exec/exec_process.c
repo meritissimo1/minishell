@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_process.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 16:53:51 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/16 19:10:53 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/24 14:21:09 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	exec_process(t_minishell *mini, int input_fd, int out_fd)
 		else
 			waitpid(pid, &g_ret_number, WUNTRACED);
 		if (WIFEXITED(g_ret_number))
-			g_ret_number = WEXITSTATUS(g_ret_number);
+			g_ret_number = WEXITSTATUS(g_ret_number);			
 	}	
 }
 

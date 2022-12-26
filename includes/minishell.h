@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/16 20:30:31 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/26 15:33:02 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,8 +146,8 @@ void	check_flags(t_minishell *mini, char *in, int i, int c);
 void	free_commands(char **array);
 void	init(t_minishell *mini, char **env);
 char	*get_input_line(char *prompt);
-t_token	*init_tk();
 void	init(t_minishell *mini, char **env);
+t_token	*init_tk();
 
 // PARSER
 void	split_cmd(t_minishell *mini, char *cmd, int i);

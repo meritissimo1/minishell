@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 09:55:03 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/02 19:11:17 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/20 11:44:31 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	redirect_out(t_minishell *mini, int i)
 {
 	int		flags;
 	char	*file;
+
 	flags = O_WRONLY | O_CREAT;
 	i = mini->c;
 	if (mini->commands[i] && mini->commands[i][0] == '>')
@@ -24,7 +25,6 @@ void	redirect_out(t_minishell *mini, int i)
 		{
 			file = ft_strtrim(&mini->commands[i][2], " ");
 			mini->out_fd = open(file, flags | O_APPEND, 0644);
-			printf("well well whats here fd:%d\nfile: %s\n", mini->out_fd, file);
 			free(file);
 		}
 		else
