@@ -6,7 +6,7 @@
 #    By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 09:12:07 by marcrodr          #+#    #+#              #
-#    Updated: 2022/12/26 15:53:25 by marcrodr         ###   ########.fr        #
+#    Updated: 2022/12/26 18:57:13 by marcrodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ UTILS_SRC	= init_env.c is_char_validated.c utils.c utils1.c token.c path.c space
 
 ## Built-ins
 BUILT_DIR	= builtins
-BUILT_SRC	= ft_env.c ft_pwd.c  ft_echo.c is_builtin.c ft_exit.c
+BUILT_SRC	= ft_env.c ft_pwd.c  ft_echo.c is_builtin.c ft_exit.c ft_cd.c
 
 ## Parser
 PARSER_DIR	= parser

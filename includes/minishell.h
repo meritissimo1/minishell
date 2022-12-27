@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/26 15:53:03 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/26 18:58:19 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@
 # define ERROR_DIR "No such file or directory\n"
 # define ERROR_CMD "command not found\n"
 # define ERROR_PIPE "minishell: syntax error near unexpected token `|'\n"
-
+# define ERROR_HOME "minishell: cd: HOME not set\n"
 
 extern int	g_ret_number;
 
@@ -126,6 +126,7 @@ void	ft_env(t_minishell *mini);
 void	ft_pwd(t_minishell *mini);
 void	ft_echo(t_minishell *mini);
 void	ft_exit(t_minishell *mini);
+int		ft_cd(t_minishell *mini);
 
 // UTILS
 char	*skip_space(char *str);
