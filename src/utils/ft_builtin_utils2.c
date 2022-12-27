@@ -6,11 +6,11 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 00:16:46 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/12/27 00:17:30 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/27 02:27:06 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell"
+#include "minishell.h"
 
 char	*ft_env_content(t_env *env_list, char *envp)
 {
@@ -24,5 +24,5 @@ char	*ft_env_content(t_env *env_list, char *envp)
 	if (!ft_strcmp(aux->var, envp))
 		return(aux->content);
 	else
-		return(1); // ATENÇAO A ESTE RETORNO = $.
+		return((char *)1); // ATENÇAO A ESTE RETORNO = $.
 }
