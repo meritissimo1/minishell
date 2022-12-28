@@ -6,6 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
+/*   Updated: 2022/12/28 16:55:05 by fmoreira         ###   ########.fr       */
 /*   Updated: 2022/12/26 18:58:19 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -81,8 +82,6 @@ typedef struct s_token
 	int		posic;	
 }			t_token;
 
-
-
 typedef struct s_minishell
 {
 	char		*line;
@@ -125,8 +124,9 @@ void	run_builtin(t_minishell *mini);
 void	ft_env(t_minishell *mini);
 void	ft_pwd(t_minishell *mini);
 void	ft_echo(t_minishell *mini);
+void	ft_cd(t_minishell *mini);
+void	ft_print_echo(t_minishell *mini, char *mini_tokens_i);
 void	ft_exit(t_minishell *mini);
-int		ft_cd(t_minishell *mini);
 
 // UTILS
 char	*skip_space(char *str);
