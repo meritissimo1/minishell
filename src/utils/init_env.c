@@ -7,6 +7,7 @@
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 14:18:45 by marcrodr          #+#    #+#             */
 /*   Updated: 2022/12/27 00:45:37 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/26 16:20:55 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +31,6 @@ t_env	ft_initialize_env(char **envp)
 	{
 		ft_more_envp(&env_list, ft_split(envp[count++], 61));
 	}
-	//printf("OP count: %d\nOP envp: %lu\n", count, env_list.size);	//teste de contagem de variaveis de ambiente
 	return(env_list);
 }
 

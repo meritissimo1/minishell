@@ -3,10 +3,11 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
 /*   Updated: 2022/12/28 16:55:05 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/26 18:58:19 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +41,7 @@
 # define ERROR_DIR "No such file or directory\n"
 # define ERROR_CMD "command not found\n"
 # define ERROR_PIPE "minishell: syntax error near unexpected token `|'\n"
-
+# define ERROR_HOME "minishell: cd: HOME not set\n"
 
 extern int	g_ret_number;
 
@@ -125,6 +126,7 @@ void	ft_pwd(t_minishell *mini);
 void	ft_echo(t_minishell *mini);
 void	ft_cd(t_minishell *mini);
 void	ft_print_echo(t_minishell *mini, char *mini_tokens_i);
+void	ft_exit(t_minishell *mini);
 
 // UTILS
 char	*skip_space(char *str);
@@ -146,8 +148,8 @@ void	check_flags(t_minishell *mini, char *in, int i, int c);
 void	free_commands(char **array);
 void	init(t_minishell *mini, char **env);
 char	*get_input_line(char *prompt);
-t_token	*init_tk();
 void	init(t_minishell *mini, char **env);
+t_token	*init_tk();
 
 // PARSER
 void	split_cmd(t_minishell *mini, char *cmd, int i);

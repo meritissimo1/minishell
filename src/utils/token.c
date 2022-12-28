@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 12:06:09 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/15 16:36:37 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/26 18:21:25 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_token	*init_tk()
 	t_token	*token;
 
 	token = (t_token *)malloc(sizeof(t_token));
-	token->end = NULL;
+	token->end = "";
 	token->new = NULL;
 	token->exec = NULL;
 	token->print = NULL;

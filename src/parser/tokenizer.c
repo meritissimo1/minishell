@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 15:51:21 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/11/21 15:35:08 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/26 17:21:58 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	tokenizer(t_minishell *mini)
 
     tk = init_tk();
 	mini->token.quote = 0;
-	tk->end = ft_strdup("");
 	if (mini->line)
 	{
 		while((int)ft_strlen(mini->line) > tk->i)

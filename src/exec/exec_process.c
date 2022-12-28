@@ -3,10 +3,11 @@
 /*                                                        :::      ::::::::   */
 /*   exec_process.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 16:53:51 by marcrodr          #+#    #+#             */
 /*   Updated: 2022/12/20 20:30:47 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/26 18:57:54 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +39,7 @@ void	exec_process(t_minishell *mini, int input_fd, int out_fd)
 		else
 			waitpid(pid, &g_ret_number, WUNTRACED);
 		if (WIFEXITED(g_ret_number))
-			g_ret_number = WEXITSTATUS(g_ret_number);
+			g_ret_number = WEXITSTATUS(g_ret_number);			
 	}	
 }
 
@@ -86,7 +87,7 @@ void	run_builtin(t_minishell *mini)
 {
 	int i = 0;
 	if (!ft_strncmp(mini->tokens[0], "exit", 4))
-		i++;//ft_exit(&mini->envp);
+		ft_exit(mini);
 	if (!ft_strncmp(mini->tokens[0], "pwd", 3))
 		ft_pwd(mini);
 	if (!ft_strncmp(mini->tokens[0], "echo", 4))
@@ -96,7 +97,7 @@ void	run_builtin(t_minishell *mini)
 	if (!ft_strncmp(mini->tokens[0], "env", 3))
 		ft_env(mini);
 	if (!ft_strncmp(mini->tokens[0], "export", 6))
-		i++;//ft_export(&mini->envp);
+		i++;//ft_export(mini);
 	if (!ft_strncmp(mini->tokens[0], "unset", 5))
-		i++;//ft_unset(&mini->envp);
+		i++;//ft_unset(mini);
 }
