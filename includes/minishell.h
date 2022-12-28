@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/28 16:55:05 by fmoreira         ###   ########.fr       */
-/*   Updated: 2022/12/26 18:58:19 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/28 19:29:18 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 
 #ifndef MINISHELL_H
@@ -122,11 +122,12 @@ void	back_slash(int sig);
 void	is_builtin(t_minishell *mini, char *cmd);
 void	run_builtin(t_minishell *mini);
 void	ft_env(t_minishell *mini);
-void	ft_pwd(t_minishell *mini);
+char	*ft_pwd(t_minishell *mini);
 void	ft_echo(t_minishell *mini);
 void	ft_cd(t_minishell *mini);
 void	ft_print_echo(t_minishell *mini, char *mini_tokens_i);
 void	ft_exit(t_minishell *mini);
+void	ft_cd_att(t_minishell *mini);
 
 // UTILS
 char	*skip_space(char *str);
@@ -150,6 +151,7 @@ void	init(t_minishell *mini, char **env);
 char	*get_input_line(char *prompt);
 void	init(t_minishell *mini, char **env);
 t_token	*init_tk();
+t_nenv	*ft_env_node(t_env *env_list, char *envp);
 
 // PARSER
 void	split_cmd(t_minishell *mini, char *cmd, int i);

@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pwd.c                                           :+:      :+:    :+:   */
+/*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/24 02:01:31 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/12/28 19:29:09 by fmoreira         ###   ########.fr       */
+/*   Created: 2022/12/28 18:54:08 by fmoreira          #+#    #+#             */
+/*   Updated: 2022/12/28 19:13:37 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-char	*ft_pwd(t_minishell *mini)
+t_nenv	*ft_env_node(t_env *env_list, char *envp)
 {
-	char *buf;
+	t_nenv	*aux;
 
-	buf = NULL;
-	buf = getcwd(buf, 2000);
-	ft_putstr_fd(buf, mini->out_fd);
-	write(mini->out_fd, "\n", 1);
-	if (buf == NULL)
-		g_ret_number = 1;
-	else
-		g_ret_number = 0;
-	return (buf);
-	free(buf);
+	aux = (t_nenv *)ft_calloc(sizeof(t_nenv), 1);
+	aux = ft_node_format(aux);
+	aux = env_list->top_node;
+	while (ft_strcmp(aux->var, envp))
+		aux = aux->next;
+	return(aux);
 }

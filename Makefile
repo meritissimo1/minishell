@@ -3,13 +3,13 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 09:12:07 by marcrodr          #+#    #+#              #
-#    Updated: 2022/12/28 16:53:45 by fmoreira         ###   ########.fr        #
-#    Updated: 2022/12/26 18:57:13 by marcrodr         ###   ########.fr        #
+#    Updated: 2022/12/28 19:08:51 by fmoreira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 NAME		= minishell
 CC			= gcc
@@ -41,7 +41,7 @@ SIGNAL_SRC	= signal.c
 
 ## Utils
 UTILS_DIR	= utils
-UTILS_SRC	= init_env.c is_char_validated.c utils.c utils1.c token.c path.c space_pipe.c init.c
+UTILS_SRC	= init_env.c is_char_validated.c utils.c utils1.c utils2.c token.c path.c space_pipe.c init.c
 
 ## Built-ins
 BUILT_DIR	= builtins
