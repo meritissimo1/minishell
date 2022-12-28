@@ -6,10 +6,10 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 14:18:45 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/27 00:45:37 by fmoreira         ###   ########.fr       */
-/*   Updated: 2022/12/26 16:20:55 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/28 23:16:44 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "minishell.h"
 
@@ -43,7 +43,6 @@ void	ft_more_envp(t_env *env_list, char **env)
 	new = ft_node_format(new);
 	new = env_list->top_node;
 	ok = 0;
-
 	while (ok != env_list->size)
 	{
 		if (!new->next)

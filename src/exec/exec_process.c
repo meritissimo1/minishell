@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   exec_process.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 16:53:51 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/20 20:30:47 by fmoreira         ###   ########.fr       */
-/*   Updated: 2022/12/26 18:57:54 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/28 20:17:29 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 
 #include "minishell.h"
@@ -97,7 +97,7 @@ void	run_builtin(t_minishell *mini)
 	if (!ft_strncmp(mini->tokens[0], "env", 3))
 		ft_env(mini);
 	if (!ft_strncmp(mini->tokens[0], "export", 6))
-		i++;//ft_export(mini);
+		ft_export(mini);
 	if (!ft_strncmp(mini->tokens[0], "unset", 5))
 		i++;//ft_unset(mini);
 }
