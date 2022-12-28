@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/27 02:20:42 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/28 16:55:05 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,19 +59,6 @@ typedef struct	s_env
 	char				**env;
 }	t_env;
 
-typedef struct	s_echo_l
-{
-	unsigned long int	size;
-	struct s_echo_n		*top_node;
-}	t_echo_list;
-
-typedef struct	s_echo_n
-{
-	char			*token;
-	struct s_echo_n	*next;
-} t_echo_node;
-
-
 typedef struct s_split
 {
 	int	qtt_comand;
@@ -93,8 +80,6 @@ typedef struct s_token
 	int		len;
 	int		posic;	
 }			t_token;
-
-
 
 typedef struct s_minishell
 {
@@ -139,11 +124,7 @@ void	ft_env(t_minishell *mini);
 void	ft_pwd(t_minishell *mini);
 void	ft_echo(t_minishell *mini);
 void	ft_cd(t_minishell *mini);
-void	ft_init_echo_list(t_echo_list *echo_list);
-t_echo_node	*ft_echo_node_format(t_echo_node *node);
-t_echo_list	ft_init_echo(t_minishell *mini, char *rawline);
-char	*ft_more_echo_token(t_minishell *mini, char *rawline);
-char	*ft_env_content(t_env *env_list, char *envp);
+void	ft_print_echo(t_minishell *mini, char *mini_tokens_i);
 
 // UTILS
 char	*skip_space(char *str);

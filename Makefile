@@ -6,7 +6,7 @@
 #    By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 09:12:07 by marcrodr          #+#    #+#              #
-#    Updated: 2022/12/27 02:21:15 by fmoreira         ###   ########.fr        #
+#    Updated: 2022/12/28 16:53:45 by fmoreira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ SIGNAL_SRC	= signal.c
 
 ## Utils
 UTILS_DIR	= utils
-UTILS_SRC	= init_env.c is_char_validated.c utils.c utils1.c token.c path.c space_pipe.c init.c ft_builtin_utils1.c ft_builtin_utils2.c
+UTILS_SRC	= init_env.c is_char_validated.c utils.c utils1.c token.c path.c space_pipe.c init.c
 
 ## Built-ins
 BUILT_DIR	= builtins
