@@ -6,9 +6,10 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 14:18:45 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/29 15:27:26 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/28 23:16:44 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "minishell.h"
 
@@ -25,7 +26,7 @@ t_env	*ft_initialize_env(char **envp)
 
 void	ft_more_envp(t_nenv *node, char **env, char **envp, int ok)
 {
-	(void)envp;
+  (void)envp;
 	while (node->next)
 		node = node->next;
 	node->next = (t_nenv *)ft_calloc(sizeof(t_nenv), 1);

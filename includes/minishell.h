@@ -6,9 +6,10 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/29 16:19:13 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/29 16:45:41 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 
 #ifndef MINISHELL_H
@@ -120,11 +121,13 @@ void	back_slash(int sig);
 void	is_builtin(t_minishell *mini, char *cmd);
 void	run_builtin(t_minishell *mini);
 void	ft_env(t_minishell *mini);
-void	ft_pwd(t_minishell *mini);
+char	*ft_pwd(t_minishell *mini);
 void	ft_echo(t_minishell *mini);
 void	ft_cd(t_minishell *mini);
 void	ft_print_echo(t_minishell *mini, char *mini_tokens_i);
 void	ft_exit(t_minishell *mini);
+void	ft_cd_att(t_minishell *mini);
+void	ft_export(t_minishell *mini);
 
 // UTILS
 char	*skip_space(char *str);
@@ -150,6 +153,7 @@ void	init(t_minishell *mini, char **env);
 void	free_linkedlist(t_minishell *mini);
 void	free_kenji(char **array);
 t_token	*init_tk();
+t_nenv	*ft_find_node(t_env *env_list, char *envp);
 
 // PARSER
 void	split_cmd(t_minishell *mini, char *cmd, int i);
