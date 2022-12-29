@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 12:06:09 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/26 18:21:25 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/28 23:57:46 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,19 @@ void	free_commands(char **array)
 
 	i = 0;
 	while (array[i] != NULL)
+	{
+		free(array[i]);
+		array[i] = NULL;
+		i++;
+	}
+}
+
+void	free_kenji(char **array)
+{
+	int	i;
+
+	i = 0;
+	while (i < 2)
 	{
 		free(array[i]);
 		array[i] = NULL;

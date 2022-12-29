@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 16:53:51 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/26 18:57:54 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/28 16:23:04 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	ft_execve_pipe(t_minishell *mini, int i, char *command)
 {
 	if (mini->tokens[0])
 		g_ret_number = execve(mini->tokens[0], &mini->tokens[0],
-				mini->envp.env);
+				mini->envp->env);
 	while (mini->path && mini->path[i] != NULL)
 	{
 		command = ft_strdup(mini->path[i]);

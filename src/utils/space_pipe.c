@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 15:51:46 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/01 16:35:18 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/28 16:16:26 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	spacein_pipe(t_minishell *mini, int i, char *command)
 	free(mini->tokens[i]);
 	mini->tokens[i] = aux;
 	command = ft_strjoin(command, mini->tokens[i - 1]);
-	g_ret_number = execve(command, &mini->tokens[i - 1], mini->envp.env);
+	g_ret_number = execve(command, &mini->tokens[i - 1], mini->envp->env);
 	free(command);
 }
 

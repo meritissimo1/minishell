@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_env.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 01:35:56 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/12/20 17:54:26 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/29 00:44:55 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,13 @@ void	ft_env(t_minishell *mini)
 {
 	t_nenv	*aux;
 
-	aux = (t_nenv *)ft_calloc(sizeof(t_nenv), 1);
-	aux = ft_node_format(aux);
-	aux = mini->envp.top_node;
-
-	while (aux->next)
+	aux = mini->envp->top_node;
+	while (aux)
 	{
 		ft_putstr_fd(aux->var, mini->out_fd);
 		write(mini->out_fd, "=", 1);
 		ft_putstr_fd(aux->content, mini->out_fd);
 		write(mini->out_fd, "\n", 1);
-		aux = aux->next;
+		aux =aux->next;
 	}
 }
