@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 13:39:21 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/28 16:16:09 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/29 14:54:36 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	free_array(char **array)
 		i++;
 	}
 	free(array);
+	array = NULL;
 }
 
 int	tokenizer_find_char(char *string, char needle)

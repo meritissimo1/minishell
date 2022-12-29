@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 10:37:22 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/29 11:46:45 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/29 14:43:17 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,14 @@ void	free_linkedlist(t_minishell *mini)
 	while (aux)
 	{
 		next = aux->next;
+		if (aux->var)
+			free(aux->var);
+		if (aux->content)
+			free(aux->content);
 		free(aux);
 		aux = next;
 		i++;
 	}
-	free(aux);
+	free(mini->envp);
+	mini->envp = NULL;	
 }

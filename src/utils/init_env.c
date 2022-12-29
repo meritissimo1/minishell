@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 14:18:45 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/29 11:16:36 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/29 14:45:11 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ t_nenv	*ft_node_format(t_env *env_list, char **envp)
 		ok = 0;
 		if ( env_list->size == 0)
 		{
-			env =  ft_split(envp[count], '=');
+			env = ft_split_by_idx(envp[count], ft_find_idx(envp[count], '='));
 			node = (t_nenv *)ft_calloc(sizeof(t_nenv), 1);
 			node->var = ft_strdup(env[0]);
 			node->content = ft_strdup(env[1]);
@@ -70,7 +70,7 @@ t_nenv	*ft_node_format(t_env *env_list, char **envp)
 		}
 		else
 		{			
-			env =  ft_split(envp[count], '=');
+			env = ft_split_by_idx(envp[count], ft_find_idx(envp[count], '='));
 			if (env[1] == NULL)
 			{
 				env[1] = ft_strdup("");
@@ -79,10 +79,8 @@ t_nenv	*ft_node_format(t_env *env_list, char **envp)
 			ft_more_envp(node, env, envp);
 			env_list->size++;
 		}
-		free_kenji(env);
-		env = NULL;
-		count++;		
+		ft_free_split(env);		
+		count++;			
 	}
-	
 	return (head);
 }

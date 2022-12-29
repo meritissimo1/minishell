@@ -31,6 +31,7 @@ int				print_x(char *str, unsigned long int arg);
 int				print_percent(char *str);
 int				ft_hexstrtoi(char *hex);
 int				ft_isspace(char c);
+int	            ft_find_idx(const char *str, int c);
 
 void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void			*ft_memchr(const void *str, int c, size_t n);
@@ -69,7 +70,7 @@ char			*ft_strncpy(char *dest, char *src, unsigned int n);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			**ft_split(char const *s, char c);
-
+char			**ft_split_by_idx(char const *s, int idx);
 int	ft_strcmp(const char *s1, const char *s2);
 
 #endif
