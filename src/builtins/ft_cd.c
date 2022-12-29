@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/26 18:36:08 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/26 19:00:08 by marcrodr         ###   ########.fr       */
+/*   Created: 2022/12/20 20:25:01 by fmoreira          #+#    #+#             */
+/*   Updated: 2022/12/29 15:36:07 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 bool	there_home(t_minishell *mini);
 
-int	ft_cd(t_minishell *mini)
+int		ft_cd(t_minishell *mini)
 {
 	char	*tk_aux;
 	bool	home;

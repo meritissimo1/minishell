@@ -6,13 +6,11 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 14:18:45 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/29 14:45:11 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/29 15:27:26 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
-
-int 	ok;
 
 t_env	*ft_initialize_env(char **envp)
 {
@@ -25,7 +23,7 @@ t_env	*ft_initialize_env(char **envp)
 	return(envp_list);
 }
 
-void	ft_more_envp(t_nenv *node, char **env, char **envp)
+void	ft_more_envp(t_nenv *node, char **env, char **envp, int ok)
 {
 	(void)envp;
 	while (node->next)
@@ -52,6 +50,7 @@ t_nenv	*ft_node_format(t_env *env_list, char **envp)
 	t_nenv	*node;
 	char	**env;
 	int		count;
+	int		ok;
 
 	count = 0;
 	node = env_list->top_node;
@@ -76,7 +75,7 @@ t_nenv	*ft_node_format(t_env *env_list, char **envp)
 				env[1] = ft_strdup("");
 				ok = 1;				
 			}				
-			ft_more_envp(node, env, envp);
+			ft_more_envp(node, env, envp, ok);
 			env_list->size++;
 		}
 		ft_free_split(env);		
