@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/29 16:45:41 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/29 18:23:47 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,9 +103,10 @@ typedef struct s_minishell
 	t_split		split;
 }				t_minishell;
 
-t_nenv	*ft_node_format(t_env	*env_list, char **env);
+t_nenv	*first_node(t_nenv *node, t_nenv *head, char **env, t_env *env_list);
+t_nenv	*ft_node_format(t_env *env_list, char **envp, int count, int ok);
 void	ft_initialize_list(t_env *env_list);
-void	ft_more_envp(t_nenv *env_list, char **env, char **envp, int ok);
+void	ft_more_envp(t_nenv *node, char **env, int ok);
 t_env	*ft_initialize_env(char **envp);
 
 // FUNCTIONS
