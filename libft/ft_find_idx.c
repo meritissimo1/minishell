@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_env.c                                           :+:      :+:    :+:   */
+/*   ft_find_idx.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/24 01:35:56 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/12/29 00:44:55 by marcrodr         ###   ########.fr       */
+/*   Created: 2022/12/29 13:15:23 by marcrodr          #+#    #+#             */
+/*   Updated: 2022/12/29 13:33:15 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "libft.h"
 
-void	ft_env(t_minishell *mini)
+int	ft_find_idx(const char *str, int c)
 {
-	t_nenv	*aux;
+	char	*ptr;
+	int		i;
+	int		len_s;
 
-	aux = mini->envp->top_node;
-	while (aux)
+	len_s = 0;
+	while (str[len_s])
+		len_s++;
+	ptr = (char *)str;
+	i = 0;
+	while (i < len_s + 1)
 	{
-		ft_putstr_fd(aux->var, mini->out_fd);
-		write(mini->out_fd, "=", 1);
-		ft_putstr_fd(aux->content, mini->out_fd);
-		write(mini->out_fd, "\n", 1);
-		aux =aux->next;
+		if (ptr[i] == (char)c)
+			return (i);
+		i++;
 	}
+	return (-1);
 }

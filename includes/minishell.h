@@ -56,7 +56,6 @@ typedef struct	s_env
 {
 	unsigned long int	size;
 	struct s_nenv		*top_node;
-	int					index;
 	char				**env;
 }	t_env;
 
@@ -99,15 +98,15 @@ typedef struct s_minishell
 	char		**path;
 	char		*rawline;
 	char		*home;
-	t_env		envp;
+	t_env		*envp;
 	t_token		token;
 	t_split		split;
 }				t_minishell;
 
-t_nenv	*ft_node_format(t_nenv	*node);
+t_nenv	*ft_node_format(t_env	*env_list, char **env);
 void	ft_initialize_list(t_env *env_list);
-void	ft_more_envp(t_env *env_list, char **env);
-t_env	ft_initialize_env(char **envp);
+void	ft_more_envp(t_nenv *env_list, char **env, char **envp, int ok);
+t_env	*ft_initialize_env(char **envp);
 
 // FUNCTIONS
 int 	check_args(int argc);
@@ -151,6 +150,8 @@ void	free_commands(char **array);
 void	init(t_minishell *mini, char **env);
 char	*get_input_line(char *prompt);
 void	init(t_minishell *mini, char **env);
+void	free_linkedlist(t_minishell *mini);
+void	free_kenji(char **array);
 t_token	*init_tk();
 t_nenv	*ft_env_node(t_env *env_list, char *envp);
 

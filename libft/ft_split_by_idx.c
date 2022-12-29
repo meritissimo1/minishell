@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_env.c                                           :+:      :+:    :+:   */
+/*   ft_split_by_idx.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/24 01:35:56 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/12/29 00:44:55 by marcrodr         ###   ########.fr       */
+/*   Created: 2022/12/29 13:17:25 by marcrodr          #+#    #+#             */
+/*   Updated: 2022/12/29 13:31:35 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "libft.h"
 
-void	ft_env(t_minishell *mini)
+char	**ft_split_by_idx(char const *s, int idx)
 {
-	t_nenv	*aux;
+	char	**split;
+	int		i;
 
-	aux = mini->envp->top_node;
-	while (aux)
-	{
-		ft_putstr_fd(aux->var, mini->out_fd);
-		write(mini->out_fd, "=", 1);
-		ft_putstr_fd(aux->content, mini->out_fd);
-		write(mini->out_fd, "\n", 1);
-		aux =aux->next;
-	}
+	split = malloc(sizeof(char *) * (2 + 1));
+	if (!split)
+		return (NULL);
+	i = 0;
+	while (s[i] && i < idx)
+		i++;
+	split[0] = ft_substr(s, 0, i);
+	split[1] = ft_substr(s, i + 1, ft_strlen(s) - i);
+	split[2] = NULL;
+	return (split);
 }

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_cd.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 20:25:01 by fmoreira          #+#    #+#             */
 /*   Updated: 2022/12/28 19:28:13 by fmoreira         ###   ########.fr       */
@@ -15,6 +15,7 @@
 bool	there_home(t_minishell *mini);
 
 void	ft_cd(t_minishell *mini)
+
 {
 	char	*tk_aux;
 	bool	home;

@@ -62,7 +62,7 @@ void	ft_execve_pipe(t_minishell *mini, int i, char *command)
 {
 	if (mini->tokens[0])
 		g_ret_number = execve(mini->tokens[0], &mini->tokens[0],
-				mini->envp.env);
+				mini->envp->env);
 	while (mini->path && mini->path[i] != NULL)
 	{
 		command = ft_strdup(mini->path[i]);
