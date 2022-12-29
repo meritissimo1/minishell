@@ -6,13 +6,13 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 02:01:31 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/12/20 19:18:34 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/28 19:29:09 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void	ft_pwd(t_minishell *mini)
+char	*ft_pwd(t_minishell *mini)
 {
 	char *buf;
 
@@ -24,5 +24,6 @@ void	ft_pwd(t_minishell *mini)
 		g_ret_number = 1;
 	else
 		g_ret_number = 0;
+	return (buf);
 	free(buf);
 }

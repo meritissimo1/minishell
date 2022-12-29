@@ -3,12 +3,13 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 09:12:07 by marcrodr          #+#    #+#              #
-#    Updated: 2022/12/29 15:28:54 by marcrodr         ###   ########.fr        #
+#    Updated: 2022/12/28 20:22:00 by fmoreira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 NAME		= minishell
 CC			= gcc
@@ -40,11 +41,11 @@ SIGNAL_SRC	= signal.c
 
 ## Utils
 UTILS_DIR	= utils
-UTILS_SRC	= init_env.c is_char_validated.c utils.c utils1.c token.c path.c space_pipe.c init.c
+UTILS_SRC	= init_env.c is_char_validated.c utils.c utils1.c utils2.c token.c path.c space_pipe.c init.c
 
 ## Built-ins
 BUILT_DIR	= builtins
-BUILT_SRC	= ft_env.c ft_pwd.c  ft_echo.c is_builtin.c ft_exit.c ft_cd.c
+BUILT_SRC	= ft_env.c ft_pwd.c  ft_echo.c is_builtin.c ft_exit.c ft_cd.c ft_export.c
 
 ## Parser
 PARSER_DIR	= parser
