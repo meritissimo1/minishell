@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 19:46:04 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/12/30 00:41:48 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/30 21:00:08 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_export(t_minishell *mini)
 	t_nenv	*aux;
 	char	**split_aux;
 
+	if(!ft_strlen(mini->token.print))
+		return ;
 	split_aux = ft_split(mini->token.print, 61);
 	aux = ft_find_node(mini->envp, split_aux[0]);
 	if (!aux)
