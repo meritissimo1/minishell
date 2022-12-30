@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 00:11:38 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/12/30 17:49:18 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/30 19:05:04 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ t_nenv	*ft_find_prev_node(t_env *env_list, char *envp)
 	}
 	else
 	{
-		printf("%lu\n", i);
 		aux = NULL;
 		return(aux);
 	}
