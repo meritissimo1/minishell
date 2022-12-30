@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_unset.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 00:11:38 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/12/30 01:35:13 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/29 20:49:31 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	ft_unset(t_minishell *mini)
 	t_nenv	*aux;
 	t_nenv	*to_free;
 
+	to_free = NULL;
 	aux = ft_find_prev_node(mini->envp, mini->token.print);
 	if (!ft_strcmp(mini->envp->top_node->var, mini->token.print))
 	{
@@ -32,7 +33,7 @@ void	ft_unset(t_minishell *mini)
 	else if (!ft_strcmp(aux->next->var, mini->token.print))
 	{
 		to_free = aux->next;
-		aux->next = aux->next->next;
+		aux->next = to_free->next;
 		if (to_free->var)
 			free(to_free->var);
 		if (to_free->content)

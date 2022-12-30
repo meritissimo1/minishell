@@ -3,16 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   utils1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 13:39:21 by marcrodr          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/12/29 18:57:10 by marcrodr         ###   ########.fr       */
-=======
-/*   Updated: 2022/12/30 00:05:26 by fmoreira         ###   ########.fr       */
->>>>>>> 988aa192ffc176444b1a701230ecf3b926804fc7
+/*   Updated: 2022/12/29 20:46:20 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "minishell.h"
 
