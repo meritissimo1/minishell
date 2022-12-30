@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   token.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 12:06:09 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/29 23:53:10 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/30 16:56:32 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,11 +86,12 @@ void	free_kenji(char **array)
 	int	i;
 
 	i = 0;
-	while (array[i] != NULL)
+	while (i < 2)
 	{
 		free(array[i]);
 		array[i] = NULL;
 		i++;
 	}
+	free(array);
 	array = NULL;
 }

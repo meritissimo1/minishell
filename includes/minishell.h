@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/30 00:35:47 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/30 16:47:49 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,6 +156,7 @@ void	free_linkedlist(t_minishell *mini);
 void	free_kenji(char **array);
 t_token	*init_tk();
 t_nenv	*ft_find_node(t_env *env_list, char *envp);
+void	ft_one_more_envp(t_nenv *node, char **env, int ok);
 
 // PARSER
 void	split_cmd(t_minishell *mini, char *cmd, int i);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_env.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 14:18:45 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/29 23:57:56 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/30 16:46:38 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,8 @@ t_nenv	*ft_node_format(t_env *env_list, char **envp, int count, int ok)
 			if (env[1] == NULL)
 			{
 				env[1] = ft_strdup("");
-				ok = 1;				
-			}				
+				ok = 1;
+			}
 			ft_more_envp(head, env, ok);
 			env_list->size++;
 		}
