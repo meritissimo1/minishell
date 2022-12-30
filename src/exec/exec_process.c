@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 16:53:51 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/28 20:17:29 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/30 00:45:38 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ void	ft_execve_pipe(t_minishell *mini, int i, char *command)
 
 void	run_builtin(t_minishell *mini)
 {
-	int i = 0;
 	if (!ft_strncmp(mini->tokens[0], "exit", 4))
 		ft_exit(mini);
 	if (!ft_strncmp(mini->tokens[0], "pwd", 3))
@@ -99,5 +98,5 @@ void	run_builtin(t_minishell *mini)
 	if (!ft_strncmp(mini->tokens[0], "export", 6))
 		ft_export(mini);
 	if (!ft_strncmp(mini->tokens[0], "unset", 5))
-		i++;//ft_unset(mini);
+		ft_unset(mini);
 }

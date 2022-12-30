@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 19:46:04 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/12/30 00:02:52 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/30 00:41:48 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,5 @@ void	ft_export(t_minishell *mini)
 	}
 	else if (!ft_strcmp(aux->var, split_aux[0]))
 		aux->content = split_aux[1];
+	free_array(split_aux);
 }

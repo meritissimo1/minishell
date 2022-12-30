@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/29 18:23:47 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/30 00:35:47 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,6 +129,7 @@ void	ft_print_echo(t_minishell *mini, char *mini_tokens_i);
 void	ft_exit(t_minishell *mini);
 void	ft_cd_att(t_minishell *mini);
 void	ft_export(t_minishell *mini);
+void	ft_unset(t_minishell *mini);
 
 // UTILS
 char	*skip_space(char *str);
