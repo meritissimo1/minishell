@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 13:39:21 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/30 00:05:26 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/30 03:33:40 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,14 @@ char	*find_env(t_minishell *mini, char *env)
 	i = 0;
 	aux = mini->envp->top_node;
 	len_env = ft_strlen(env);
-	while (i <= (int)mini->envp->size)
+	while (i < (int)mini->envp->size)
 	{
 		len = ft_strlen(aux->var);
 		if (!ft_strncmp(aux->var, env, len_env)
 			&& len == len_env)
 			return (aux->content);
 		aux = aux->next;
+		i++;
 	}
 	return (0);
 }
