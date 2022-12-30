@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_export.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 19:46:04 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/12/29 20:43:49 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/30 21:08:10 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "minishell.h"
 
@@ -17,6 +18,8 @@ void	ft_export(t_minishell *mini)
 	t_nenv	*aux;
 	char	**split_aux;
 
+	if(!ft_strlen(mini->token.print))
+		return ;
 	split_aux = ft_split(mini->token.print, 61);
 	aux = ft_find_node(mini->envp, split_aux[0]);
 	if (!aux)
