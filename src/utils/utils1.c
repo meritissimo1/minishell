@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 13:39:21 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/29 14:54:36 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/29 18:57:10 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char	*find_env(t_minishell *mini, char *env)
 	i = 0;
 	aux = mini->envp->top_node;
 	len_env = ft_strlen(env);
-	while (aux->next && i < (int)mini->envp->size)
+	while (i <= (int)mini->envp->size)
 	{
 		len = ft_strlen(aux->var);
 		if (!ft_strncmp(aux->var, env, len_env)

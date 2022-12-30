@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 19:46:04 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/12/29 17:27:29 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/29 18:42:02 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ void	ft_export(t_minishell *mini)
 	if (!aux)
 	{
 		printf("split 0: %s\n split 1: %s\n", split_aux[0], split_aux[1]);
-		//ft_more_envp(mini->envp, split_aux);
+		ft_more_envp(mini->envp->top_node, split_aux, 0);
 	}
-	else if (split_aux[1])
+	else if (!ft_strcmp(aux->var, split_aux[0]))
 	{
 		printf("var: %s\ncontent: %s\n", aux->var, aux->content);
 		aux->content = split_aux[1];
