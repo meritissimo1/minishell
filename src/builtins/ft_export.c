@@ -3,16 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_export.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 19:46:04 by fmoreira          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/12/30 21:00:08 by fmoreira         ###   ########.fr       */
-=======
-/*   Updated: 2022/12/29 20:43:49 by marcrodr         ###   ########.fr       */
->>>>>>> 00a3a03d90aea64f1be3c57900f1d52cc2adb49d
+/*   Updated: 2022/12/30 21:08:10 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "minishell.h"
 
