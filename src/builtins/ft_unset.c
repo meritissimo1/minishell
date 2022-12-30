@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_unset.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 00:11:38 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/12/30 03:51:07 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/30 21:47:09 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ t_nenv	*ft_find_prev_node(t_env *env_list, char *envp)
 	t_nenv	*aux;
 	unsigned long int	i;
 
-	i = 0;
+	i = 2;
 	aux = env_list->top_node;
 	if(!ft_strlen(envp))
 		return (NULL);
@@ -71,6 +71,7 @@ t_nenv	*ft_find_prev_node(t_env *env_list, char *envp)
 	}
 	else
 	{
+		printf("%lu\n", i);
 		aux = NULL;
 		return(aux);
 	}
