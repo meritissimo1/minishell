@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_unset.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 00:11:38 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/12/30 21:47:09 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/30 17:49:18 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,6 @@ void	ft_unset(t_minishell *mini)
 	{
 		to_free = aux->next;
 		aux->next = to_free->next;
-		if (to_free->var)
-			free(to_free->var);
-		if (to_free->content)
-			free(to_free->content);
 		free(to_free);
 	}
 }
