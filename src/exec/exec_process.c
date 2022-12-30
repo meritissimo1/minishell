@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_process.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 16:53:51 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/30 03:47:20 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/30 16:12:28 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,25 +60,28 @@ int	fd_handler(int input_fd, int out_fd)
 
 void	ft_execve_pipe(t_minishell *mini, int i, char *command)
 {
-	if (mini->tokens[0])
-		g_ret_number = execve(mini->tokens[0], &mini->tokens[0],
-				mini->envp->env);
-	while (mini->path && mini->path[i] != NULL)
+	if (find_env(mini, "PATH"))
 	{
-		command = ft_strdup(mini->path[i]);
-		if (mini->tokens[0][0] == '|' && mini->tokens[1])
+		if (mini->tokens[0])
+			g_ret_number = execve(mini->tokens[0], &mini->tokens[0],
+					mini->envp->env);
+		while (mini->path && mini->path[i] != NULL)
 		{
-			if (!mini->tokens[0][1])
-				spacein_pipe(mini, 2, command);
-			else
+			command = ft_strdup(mini->path[i]);
+			if (mini->tokens[0][0] == '|' && mini->tokens[1])
 			{
-				mini->tokens[0] = &mini->tokens[0][1];
-				spacein_pipe(mini, 1, command);
+				if (!mini->tokens[0][1])
+					spacein_pipe(mini, 2, command);
+				else
+				{
+					mini->tokens[0] = &mini->tokens[0][1];
+					spacein_pipe(mini, 1, command);
+				}
 			}
+			else
+				spacein_pipe(mini, 1, command);
+			i++;
 		}
-		else
-			spacein_pipe(mini, 1, command);
-		i++;
 	}
 	execve_error(mini);
 }
