@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_env.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 01:35:56 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/12/30 17:33:52 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/31 00:12:20 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,5 @@ void	ft_env(t_minishell *mini)
 		write(mini->out_fd, "\n", 1);
 		aux = aux->next;
 	}
+	g_ret_number = 0;
 }

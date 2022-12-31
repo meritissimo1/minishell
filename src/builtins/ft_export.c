@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_export.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 19:46:04 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/12/30 19:01:44 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/31 00:13:26 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,5 @@ void	ft_export(t_minishell *mini)
 	else if (!ft_strcmp(aux->var, split_aux[0]))
 		aux->content = ft_strdup(split_aux[1]);
 	free_kenji(split_aux);
+	g_ret_number = 0;
 }

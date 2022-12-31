@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 18:54:08 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/12/30 16:46:50 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/31 01:12:02 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_nenv	*ft_find_node(t_env *env_list, char *envp)
 	t_nenv	*aux;
 	unsigned long int	i;
 
-	i = 0;
+	i = 1;
 	aux = env_list->top_node;
 	if(!ft_strlen(envp))
 		return (NULL);

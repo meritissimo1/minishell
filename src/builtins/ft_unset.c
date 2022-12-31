@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_unset.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 00:11:38 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/12/30 19:05:04 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/31 00:14:15 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	ft_unset(t_minishell *mini)
 		aux->next = to_free->next;
 		free(to_free);
 	}
+	g_ret_number = 0;
 }
 
 t_nenv	*ft_find_prev_node(t_env *env_list, char *envp)
