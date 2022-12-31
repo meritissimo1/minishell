@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/30 16:47:49 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/31 16:29:57 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@
 # define ERROR_CMD "command not found\n"
 # define ERROR_PIPE "minishell: syntax error near unexpected token `|'\n"
 # define ERROR_HOME "minishell: cd: HOME not set\n"
+# define ERROR_REDIR "bash: syntax error near unexpected token `newline'\n"
 
 extern int	g_ret_number;
 
@@ -170,8 +171,8 @@ void	redirect_out(t_minishell *mini, int i);
 void	redirect_in(t_minishell *mini, int c, char *aux);
 void	simple_redir_out(t_minishell *mini, int i, int flags);
 char	**re_redir(t_minishell *mini, char **file, int c);
-char	*new_comman(int i, char **file);
-void	read_until(char *file);
+char	*new_comman(int i, char **file, int fd);
+void	read_until(t_minishell *mini, char *file);
 int		find_char(char *str, char wanted);
 void	ft_execve_pipe(t_minishell *mini, int i, char *command);
 void	exec_process(t_minishell *mini, int in_fd, int out_fd);

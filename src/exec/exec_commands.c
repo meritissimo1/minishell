@@ -6,7 +6,7 @@
 /*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 10:20:37 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/16 15:39:05 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/31 14:24:21 by marcrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	exec_commands(t_minishell *mini)
 void	run_commands_aux(t_minishell *mini)
 {
 	 action(mini);
-	 if (mini->commands[0][0] != '>')
+	 if (mini->commands[0][0] != '>' || mini->commands[0][0] != '<')
 	 {
 		tokenizer(mini);
 		if (mini->tokens[0])
@@ -71,7 +71,7 @@ void	action(t_minishell *mini)
 	if (mini->error_name_file != NULL)
 	{
 		g_ret_number = 1;
-		printf("minishell: %s: %s", mini->error_name_file, ERROR_DIR);
+		printf("bash: %s", ERROR_REDIR);
 		free(mini->error_name_file);
 	}
 }
