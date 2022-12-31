@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 20:25:01 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/12/31 02:26:25 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/31 19:54:08 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,19 +58,22 @@ void	ft_cd_att(t_minishell *mini)
 	t_nenv	*old_pwd_aux;
 	char	*to_join;
 	char	**to_split;
-	
-	old_pwd_aux = ft_find_node(mini->envp, "OLDPWD");
+
+	pwd_aux = ft_find_node(mini->envp, "HOME");
 	to_join = ft_strjoin("PWD", "=");
-	to_join = ft_strjoin(to_join, old_pwd_aux->content);
+	to_join = ft_strjoin(to_join, pwd_aux->content);
 	to_split = ft_split(to_join, 61);
-	if (!ft_find_node(mini->envp, "PWD"))
+	while (!ft_find_node(mini->envp, "PWD") || !ft_find_node(mini->envp, "OLDPWD"))
 	{
-		pwd_aux = old_pwd_aux;
+		if (!ft_find_node(mini->envp, "PWD") && mini->envp->size++)
+			ft_one_more_envp(mini->envp->top_node, to_split, 0);
+		if (!ft_find_node(mini->envp, "OLDPWD"))
+			to_split[0] = ft_strdup("OLDPWD");
 		ft_one_more_envp(mini->envp->top_node, to_split, 0);
 		mini->envp->size++;
 	}
-	else
-		pwd_aux = ft_find_node(mini->envp, "PWD");
+	pwd_aux = ft_find_node(mini->envp, "PWD");
+	old_pwd_aux = ft_find_node(mini->envp, "OLDPWD");
 	old_pwd_aux->content = pwd_aux->content;
 	pwd_aux->content = ft_pwd(mini);
 	free_kenji(to_split);
