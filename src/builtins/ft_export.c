@@ -6,10 +6,9 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 19:46:04 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/12/31 00:13:26 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/31 22:36:11 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "minishell.h"
 
@@ -20,7 +19,7 @@ void	ft_export(t_minishell *mini)
 	int		len;
 
 	len = (int)ft_strlen(mini->token.print);
-	if(!len)
+	if (!len)
 		return ;
 	if (find_char(mini->token.print, '=') == len)
 		mini->token.print = ft_strjoin(mini->token.print, "=");
