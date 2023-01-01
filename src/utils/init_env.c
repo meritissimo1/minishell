@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_env.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 14:18:45 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/30 16:46:38 by marcrodr         ###   ########.fr       */
+/*   Updated: 2023/01/01 22:38:01 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 t_env	*ft_initialize_env(char **envp)
 {
 	t_env	*envp_list;
-	
-	envp_list = (t_env *)ft_calloc(sizeof(t_env), 1); 	
+
+	envp_list = (t_env *)ft_calloc(sizeof(t_env), 1);
 	ft_initialize_list(envp_list);
 	envp_list->env = envp;
 	envp_list->top_node = ft_node_format(envp_list, envp, 0, 0);
-	return(envp_list);
+	return (envp_list);
 }
 
 void	ft_more_envp(t_nenv *node, char **env, int ok)
@@ -59,13 +59,13 @@ t_nenv	*ft_node_format(t_env *env_list, char **envp, int count, int ok)
 	t_nenv	*head;
 	t_nenv	*node;
 	char	**env;
-	
+
 	node = env_list->top_node;
 	while (envp[count] != NULL)
 	{
 		env = ft_split_by_idx(envp[count], ft_find_idx(envp[count], '='));
 		ok = 0;
-		if ( env_list->size == 0)
+		if (env_list->size == 0)
 			head = first_node(node, head, env, env_list);
 		else
 		{			
@@ -77,8 +77,8 @@ t_nenv	*ft_node_format(t_env *env_list, char **envp, int count, int ok)
 			ft_more_envp(head, env, ok);
 			env_list->size++;
 		}
-		ft_free_split(env);		
-		count++;			
+		ft_free_split(env);
+		count++;
 	}
 	return (head);
 }

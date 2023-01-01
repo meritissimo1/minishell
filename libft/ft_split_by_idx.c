@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split_by_idx.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 13:17:25 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/29 13:31:35 by marcrodr         ###   ########.fr       */
+/*   Updated: 2023/01/01 22:23:01 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

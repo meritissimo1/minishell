@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   is_char_validated.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 10:37:22 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/29 14:43:17 by marcrodr         ###   ########.fr       */
+/*   Updated: 2023/01/01 22:40:06 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	is_quote_apostro(char c)
 
 int	is_operator(char c)
 {
-	if (c == '>' || c == '<' ||
-		c == '&' || c == '|' )
+	if (c == '>' || c == '<'
+		|| c == '&' || c == '|' )
 		return (1);
 	return (0);
 }
@@ -47,5 +47,5 @@ void	free_linkedlist(t_minishell *mini)
 		i++;
 	}
 	free(mini->envp);
-	mini->envp = NULL;	
+	mini->envp = NULL;
 }

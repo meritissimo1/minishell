@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/01 22:26:11 by fmoreira          #+#    #+#             */
+/*   Updated: 2023/01/01 22:27:03 by fmoreira         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
@@ -31,7 +43,7 @@ int				print_x(char *str, unsigned long int arg);
 int				print_percent(char *str);
 int				ft_hexstrtoi(char *hex);
 int				ft_isspace(char c);
-int	            ft_find_idx(const char *str, int c);
+int				ft_find_idx(const char *str, int c);
 
 void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void			*ft_memchr(const void *str, int c, size_t n);
@@ -40,7 +52,6 @@ void			*ft_memmove(void *dst, const void *src, size_t len);
 void			*ft_memset(void *s, int c, size_t n);
 void			ft_bzero(void *s, size_t n);
 long long int	ft_itoll(char *str);
-
 
 size_t			ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
@@ -71,6 +82,6 @@ char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			**ft_split(char const *s, char c);
 char			**ft_split_by_idx(char const *s, int idx);
-int	ft_strcmp(const char *s1, const char *s2);
+int				ft_strcmp(const char *s1, const char *s2);
 
 #endif

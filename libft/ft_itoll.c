@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoll.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 16:00:31 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/08/10 16:25:20 by marcrodr         ###   ########.fr       */
+/*   Updated: 2023/01/01 22:25:43 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 long long int	ft_itoll(char *str)
 {
 	int				i;
-    int				count;
+	int				count;
 	long long int	is_negative;
 	long long int	result;
 

@@ -1,12 +1,12 @@
-	/* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 11:38:25 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/10/14 17:20:03 by marcrodr         ###   ########.fr       */
+/*   Updated: 2023/01/01 22:42:46 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,11 @@ char	*skip_space(char *str)
 	return (str);
 }
 
-void	ft_print_ppc(char  **splited, int fd, int aux)
+void	ft_print_ppc(char **splited, int fd, int aux)
 {
 	int		i;
 	char	ok;
+
 	i = 0;
 	ok = 0;
 	while (splited[i++])
