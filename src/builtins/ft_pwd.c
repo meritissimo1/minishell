@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 02:01:31 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/12/31 00:58:33 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/31 22:37:03 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_pwd(t_minishell *mini)
 {
-	char *buf;
+	char	*buf;
 
 	buf = NULL;
 	buf = getcwd(buf, 2000);

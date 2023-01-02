@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   is_builtin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 10:34:30 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/10/17 10:59:44 by marcrodr         ###   ########.fr       */
+/*   Updated: 2022/12/31 22:21:26 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,4 @@ void	is_builtin(t_minishell *mini, char *cmd)
 		mini->is_builtin = true;
 	else
 		mini->is_builtin = false;
-
-		
 }

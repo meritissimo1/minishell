@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 20:25:01 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/12/31 19:54:08 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/31 22:34:40 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,15 @@ void	ft_cd(t_minishell *mini)
 	else
 		ft_cd_att(mini);
 	free(tk_aux);
-	//return (0);
 }
 
 bool	there_home(t_minishell *mini)
 {
-	if(find_env(mini, "HOME"))
+	if (find_env(mini, "HOME"))
 		return (true);
 	else
 		return (false);
 }
-
 
 void	ft_cd_att(t_minishell *mini)
 {
@@ -63,7 +61,8 @@ void	ft_cd_att(t_minishell *mini)
 	to_join = ft_strjoin("PWD", "=");
 	to_join = ft_strjoin(to_join, pwd_aux->content);
 	to_split = ft_split(to_join, 61);
-	while (!ft_find_node(mini->envp, "PWD") || !ft_find_node(mini->envp, "OLDPWD"))
+	while (!ft_find_node(mini->envp, "PWD")
+		|| !ft_find_node(mini->envp, "OLDPWD"))
 	{
 		if (!ft_find_node(mini->envp, "PWD") && mini->envp->size++)
 			ft_one_more_envp(mini->envp->top_node, to_split, 0);

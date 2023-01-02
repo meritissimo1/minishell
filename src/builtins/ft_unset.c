@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 00:11:38 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/12/31 00:14:15 by fmoreira         ###   ########.fr       */
+/*   Updated: 2022/12/31 22:30:09 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,32 +43,26 @@ void	ft_unset(t_minishell *mini)
 
 t_nenv	*ft_find_prev_node(t_env *env_list, char *envp)
 {
-	t_nenv	*aux;
+	t_nenv				*aux;
 	unsigned long int	i;
 
 	i = 2;
 	aux = env_list->top_node;
-	if(!ft_strlen(envp))
+	if (!ft_strlen(envp))
 		return (NULL);
-	if (!ft_strcmp(aux->var, envp))
-	{
-		env_list->size--;
-		return(aux);
-	}
+	if (!ft_strcmp(aux->var, envp) && env_list->size--)
+		return (aux);
 	while (ft_strcmp(aux->next->var, envp) && i++ < env_list->size)
 	{
 		if (!aux->next)
 			break ;
 		aux = aux->next;
 	}
-	if (!ft_strcmp(aux->next->var, envp))
-	{
-		env_list->size--;
-		return(aux);
-	}
+	if (!ft_strcmp(aux->next->var, envp) && env_list->size--)
+		return (aux);
 	else
 	{
 		aux = NULL;
-		return(aux);
+		return (aux);
 	}
 }
