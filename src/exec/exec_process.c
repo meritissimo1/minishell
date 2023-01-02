@@ -3,21 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   exec_process.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 16:53:51 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/30 16:12:28 by marcrodr         ###   ########.fr       */
+/*   Updated: 2023/01/01 22:32:50 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "minishell.h"
 
 void	exec_process(t_minishell *mini, int input_fd, int out_fd)
 {
 	pid_t	pid;
-  
+
 	if (mini->is_builtin && mini->tokens[0])
 		run_builtin(mini);
 	else
@@ -39,7 +37,7 @@ void	exec_process(t_minishell *mini, int input_fd, int out_fd)
 		else
 			waitpid(pid, &g_ret_number, WUNTRACED);
 		if (WIFEXITED(g_ret_number))
-			g_ret_number = WEXITSTATUS(g_ret_number);			
+			g_ret_number = WEXITSTATUS(g_ret_number);
 	}	
 }
 

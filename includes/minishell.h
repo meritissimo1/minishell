@@ -3,14 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:04:40 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/31 16:29:57 by marcrodr         ###   ########.fr       */
+/*   Updated: 2023/01/01 22:21:56 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #ifndef MINISHELL_H
 # define MINISHELL_H 
@@ -46,14 +44,14 @@
 
 extern int	g_ret_number;
 
-typedef	struct	s_nenv
+typedef struct s_nenv
 {
 	char			*var;
 	char			*content;
 	struct s_nenv	*next;
 }	t_nenv;
 
-typedef struct	s_env
+typedef struct s_env
 {
 	unsigned long int	size;
 	struct s_nenv		*top_node;
@@ -64,8 +62,8 @@ typedef struct s_split
 {
 	int	qtt_comand;
 	int	ini;
-	int len;
-	int quote;
+	int	len;
+	int	quote;
 	int	qtt_pipe;	
 }		t_split;
 
@@ -111,7 +109,7 @@ void	ft_more_envp(t_nenv *node, char **env, int ok);
 t_env	*ft_initialize_env(char **envp);
 
 // FUNCTIONS
-int 	check_args(int argc);
+int		check_args(int argc);
 
 // SIGNALS
 void	define_signals(void);
@@ -136,7 +134,7 @@ void	ft_unset(t_minishell *mini);
 char	*skip_space(char *str);
 void	spacein_pipe(t_minishell *mini, int i, char *command);
 void	init_split(t_minishell *mini);
-void	ft_print_ppc(char  **splited, int fd, int aux);
+void	ft_print_ppc(char **splited, int fd, int aux);
 void	get_home_sign(t_minishell *mini, t_token *tk);
 void	get_dollar_sign(t_minishell *mini, t_token *tk);
 int		count_pipe(t_minishell *mini, char *cmd, int i);
@@ -155,7 +153,7 @@ char	*get_input_line(char *prompt);
 void	init(t_minishell *mini, char **env);
 void	free_linkedlist(t_minishell *mini);
 void	free_kenji(char **array);
-t_token	*init_tk();
+t_token	*init_tk(void);
 t_nenv	*ft_find_node(t_env *env_list, char *envp);
 void	ft_one_more_envp(t_nenv *node, char **env, int ok);
 

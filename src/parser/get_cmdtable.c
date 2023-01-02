@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_cmdtable.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:28:51 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/15 16:09:45 by marcrodr         ###   ########.fr       */
+/*   Updated: 2023/01/01 22:33:51 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

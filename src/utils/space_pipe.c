@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   space_pipe.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 15:51:46 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/28 16:16:26 by marcrodr         ###   ########.fr       */
+/*   Updated: 2023/01/01 22:41:09 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	spacein_pipe(t_minishell *mini, int i, char *command)
 	char	*aux;
 
 	if (ft_strlen(mini->token.print) && mini->tokens[i]
-	&& (mini->tokens[i][0] == QUOTE || mini->tokens[i][0] == D_QUOTE)
-	&& ft_strncmp(mini->tokens[i - 1], "sed", 3))
+		&& (mini->tokens[i][0] == QUOTE || mini->tokens[i][0] == D_QUOTE)
+			&& ft_strncmp(mini->tokens[i - 1], "sed", 3))
 	{
 		aux = ft_strtrim(mini->token.print, D_QUOTE_S);
 		free_token(&mini->tokens[i + 1]);

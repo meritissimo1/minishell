@@ -6,15 +6,15 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 10:39:03 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/06 23:29:36 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/01/01 22:36:03 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-static void handler(int signal)
+static void	handler(int signal)
 {
-	write(1, &signal, 1);	
+	write(1, &signal, 1);
 	g_ret_number = 130;
 	ft_putstr_fd("\n", 1);
 	rl_replace_line("", 0);

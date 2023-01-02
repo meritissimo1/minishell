@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 16:20:16 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/28 20:52:52 by marcrodr         ###   ########.fr       */
+/*   Updated: 2023/01/01 22:38:52 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,10 @@ void	init(t_minishell *mini, char **env)
 char	*get_input_line(char *prompt)
 {
 	char	*input;
+
 	input = readline(prompt);
 	if (input == NULL)
 		return (NULL);
 	else
-		return(input);
+		return (input);
 }

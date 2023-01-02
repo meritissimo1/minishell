@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   token.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcrodr <marcrodr@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 12:06:09 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/30 16:56:32 by marcrodr         ###   ########.fr       */
+/*   Updated: 2023/01/01 22:42:03 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-t_token	*init_tk()
+t_token	*init_tk(void)
 {
 	t_token	*token;
 
@@ -24,9 +24,9 @@ t_token	*init_tk()
 	token->quote = '\0';
 	token->i = 0;
 	token->init = 0;
-	token->len = 1;	
+	token->len = 1;
 	token->posic = 0;
-	return (token);	
+	return (token);
 }
 
 void	get_home_sign(t_minishell *mini, t_token *tk)

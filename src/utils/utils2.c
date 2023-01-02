@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 18:54:08 by fmoreira          #+#    #+#             */
-/*   Updated: 2022/12/31 01:12:02 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/01/01 22:43:58 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 t_nenv	*ft_find_node(t_env *env_list, char *envp)
 {
-	t_nenv	*aux;
+	t_nenv				*aux;
 	unsigned long int	i;
 
 	i = 1;
 	aux = env_list->top_node;
-	if(!ft_strlen(envp))
+	if (!ft_strlen(envp))
 		return (NULL);
 	while (ft_strcmp(aux->var, envp) && i++ < env_list->size)
 	{
@@ -28,11 +28,11 @@ t_nenv	*ft_find_node(t_env *env_list, char *envp)
 		aux = aux->next;
 	}
 	if (!ft_strcmp(aux->var, envp))
-		return(aux);
+		return (aux);
 	else
 	{
 		aux = NULL;
-		return(aux);
+		return (aux);
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 15:51:21 by marcrodr          #+#    #+#             */
-/*   Updated: 2022/12/30 03:19:15 by fmoreira         ###   ########.fr       */
+/*   Updated: 2023/01/01 22:33:41 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	tokenizer(t_minishell *mini)
 {
-	t_token *tk;
+	t_token	*tk;
 
-    tk = init_tk();
+	tk = init_tk();
 	mini->token.quote = 0;
 	if (mini->line)
 	{
-		while((int)ft_strlen(mini->line) > tk->i)
+		while ((int)ft_strlen(mini->line) > tk->i)
 		{
 			if (mini->token.quote == 0 && (mini->line[tk->i] == QUOTE))
 				mini->token.quote = mini->line[tk->i];

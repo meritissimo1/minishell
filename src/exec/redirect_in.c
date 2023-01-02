@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   redirect_in.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/01 22:29:06 by fmoreira          #+#    #+#             */
+/*   Updated: 2023/01/01 22:30:00 by fmoreira         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
 
 void	redirect_in(t_minishell *mini, int c, char *aux)
@@ -27,7 +39,6 @@ void	redirect_in(t_minishell *mini, int c, char *aux)
 		mini->redirect = 0;
 		free_array(file);
 	}
-	
 }
 
 char	**re_redir(t_minishell *mini, char **file, int c)
@@ -62,7 +73,7 @@ void	read_until(t_minishell *mini, char *file)
 		return ;
 	}		
 	while (ft_strncmp(line, file, ft_strlen(file))
-			|| ft_strlen(line) != ft_strlen(file))
+		|| ft_strlen(line) != ft_strlen(file))
 	{
 		free(line);
 		line = readline("> ");
@@ -82,7 +93,7 @@ char	*new_comman(int i, char **file, int fd)
 	{
 		while (file[i] != NULL)
 		{
-			if(ft_strlen(aux) > 0)
+			if (ft_strlen(aux) > 0)
 				aux = ft_strjoin(aux, " ");
 			aux = ft_strjoin(aux, file[i]);
 		}
