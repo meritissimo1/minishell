@@ -23,7 +23,6 @@ int	main(int argc, char **argv, char **env)
 	(void)argv;
 	check_args(argc);
 	init(&mini, env);
-	(void)argv;
 	while (42)
 	{
 		mini.out_fd = STDOUT_FILENO;
